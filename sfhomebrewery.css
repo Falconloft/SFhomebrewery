@@ -1,74 +1,72 @@
 /** Defining fonts **/
 @font-face {
-    font-family: 'Title';
-    src: url('https://falconloft.github.io/scifihomebrewery/fonts/neutra_display_titling-webfont.woff2') format('woff2'),
-         url('https://falconloft.github.io/scifihomebrewery/fonts/neutra_display_titling-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'BlackI';
+  src: url('https://falconloft.github.io/scifihomebrewery/fonts/Radikal%20W01%20black%20italic.ttf')
 }
 
 @font-face {
-    font-family: 'DemiSC';
-    src: url('https://falconloft.github.io/scifihomebrewery/fonts/neutra_text_light_sc_demi-webfont.woff2') format('woff2'),
-         url('https://falconloft.github.io/scifihomebrewery/fonts/neutra_text_light_sc_demi-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Black';
+  src: url('https://falconloft.github.io/scifihomebrewery/fonts/Radikal%20W01%20black.ttf')
 }
 
 @font-face {
-    font-family: 'BoldSC-I';
-    src: url('https://falconloft.github.io/scifihomebrewery/fonts/neutra_text_sc_bold_italic-webfont.woff2') format('woff2'),
-         url('https://falconloft.github.io/scifihomebrewery/fonts/neutra_text_sc_bold_italic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'BoldI';
+  src: url('https://falconloft.github.io/scifihomebrewery/fonts/Radikal%20W01%20bold%20italic.ttf')
 }
 
 @font-face {
-    font-family: 'BookSC';
-    src: url('https://falconloft.github.io/scifihomebrewery/fonts/neutra_text_sc-webfont.woff2') format('woff2'),
-         url('https://falconloft.github.io/scifihomebrewery/fonts/neutra_text_sc-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Bold';
+  src: url('https://falconloft.github.io/scifihomebrewery/fonts/Radikal%20W01%20bold.ttf')
 }
 
 @font-face {
-    font-family: 'BoldAlt';
-    src: url('https://falconloft.github.io/scifihomebrewery/fonts/neutra_text_tf_alt_bold-webfont.woff2') format('woff2'),
-         url('https://falconloft.github.io/scifihomebrewery/fonts/neutra_text_tf_alt_bold-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'RegularI';
+  src: url('https://falconloft.github.io/scifihomebrewery/fonts/Radikal%20W01%20regular%20italic.ttf')
 }
 
 @font-face {
-    font-family: 'Alt-I';
-    src: url('https://falconloft.github.io/scifihomebrewery/fonts/neutra_text_tf_alt_italic-webfont.woff2') format('woff2'),
-         url('https://falconloft.github.io/scifihomebrewery/fonts/neutra_text_tf_alt_italic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'LightI';
+  src: url('https://falconloft.github.io/scifihomebrewery/fonts/Radikal%20W01%20light%20italic.ttf')
 }
 
 @font-face {
-    font-family: 'BoldAlt-I';
-    src: url('https://falconloft.github.io/scifihomebrewery/fonts/neutratext-bolditalicalt-webfont.woff2') format('woff2'),
-         url('https://falconloft.github.io/scifihomebrewery/fonts/neutratext-bolditalicalt-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Light';
+  src: url('https://falconloft.github.io/scifihomebrewery/fonts/Radikal%20W01%20light.ttf')
 }
 
 @font-face {
-    font-family: 'BookAlt';
-    src: url('https://falconloft.github.io/scifihomebrewery/fonts/neutratext-bookalt-webfont.woff2') format('woff2'),
-         url('https://falconloft.github.io/scifihomebrewery/fonts/neutratext-bookalt-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'MediumI';
+  src: url('https://falconloft.github.io/scifihomebrewery/fonts/Radikal%20W01%20medium%20italic.ttf')
 }
 
 @font-face {
-    font-family: 'BookSC-I';
-    src: url('https://falconloft.github.io/scifihomebrewery/fonts/neutratext-bookscitalic-webfont.woff2') format('woff2'),
-         url('https://falconloft.github.io/scifihomebrewery/fonts/neutratext-bookscitalic-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'Medium';
+  src: url('https://falconloft.github.io/scifihomebrewery/fonts/Radikal%20W01%20medium.ttf')
+}
+
+@font-face {
+  font-family: 'Regular';
+  src: url('https://falconloft.github.io/scifihomebrewery/fonts/Radikal%20W01%20regular.ttf')
+}
+
+@font-face {
+  font-family: 'ThinI';
+  src: url('https://falconloft.github.io/scifihomebrewery/fonts/Radikal%20W01%20thin%20italic.ttf')
+}
+
+@font-face {
+  font-family: 'Thin';
+  src: url('https://falconloft.github.io/scifihomebrewery/fonts/Radikal%20W01%20thin.ttf')
+}
+
+@font-face {
+  font-family: 'UltrathinI';
+  src: url('https://falconloft.github.io/scifihomebrewery/fonts/Radikal%20W01%20ultrathin%20italic.ttf')
+}
+
+@font-face {
+  font-family: 'Ultrathin';
+  src: url('https://falconloft.github.io/scifihomebrewery/fonts/Radikal%20W01%20ultrathin.ttf')
 }
 
 .phb {
