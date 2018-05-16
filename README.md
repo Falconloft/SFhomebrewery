@@ -1,11 +1,3 @@
-# homebrewery-sotdl
-An alternate CSS to make brew on Homebrewery looks like the Shadow of the Demon Lord products.
-
-## Live example
-
-You can visiti [this brew](http://homebrewery.naturalcrit.com/share/r1WkLmer3g) that showcast every options of homebrewery and it's render
-
-
 ## How to use it
 * Go to [The Homebrewery](http://homebrewery.naturalcrit.com/)
 * Create a new Brew
@@ -14,10 +6,7 @@ You can visiti [this brew](http://homebrewery.naturalcrit.com/share/r1WkLmer3g) 
 <link rel = "stylesheet" type = "text/css" href = "https://falconloft.github.io/scifihomebrewery/sfhomebrewery.css" />
 ```
 
-## Making it you own
-If you'd like to make changes in you own repo and use it, don't forget to change the url for the font-family in the `homebrewery-sotdl.css` file and link tag.
-
-And don't forget to activate *Git Hub Pages* in your repo settings to quickly publish your file.
+Don't forget to activate *Git Hub Pages* in your repo settings to quickly publish your file.
 
 ### Example 
 ``` css
