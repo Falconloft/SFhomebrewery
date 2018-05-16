@@ -11,7 +11,7 @@ You can visiti [this brew](http://homebrewery.naturalcrit.com/share/r1WkLmer3g) 
 * Create a new Brew
 * At the top of your brew simply paste the following line : 
 ``` html
-<link rel = "stylesheet" type = "text/css" href = "https://groumy.github.io/homebrewery-sotdl/homebrewery-sotdl.css" />
+<link rel = "stylesheet" type = "text/css" href = "https://falconloft.github.io/scifihomebrewery/sfhomebrewery.css" />
 ```
 
 ## Making it you own
