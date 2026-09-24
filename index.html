@@ -39,7 +39,7 @@
                 const proxyUrl = `https://allorigins.win{encodeURIComponent(targetUrl)}`;
                 
                 const response = await fetch(proxyUrl);
-                if (!response.ok) throw new Error('Network response was not ok');
+                if (!response.ok) throw new Error('NET_WRONG');
                 
                 const data = await response.json();
                 
@@ -47,7 +47,7 @@
                 document.getElementById('content').textContent = data.contents;
             } catch (error) {
                 console.error(error);
-                document.getElementById('content').textContent = 'Failed to load content. Ensure the file in Drive is shared.';
+                document.getElementById('content').textContent = 'SHARE_FAIL.';
             }
         }
 
