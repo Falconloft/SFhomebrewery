@@ -21,41 +21,38 @@
             border: 1px solid #ddd;
         }
     </style>
-    <!-- Include Puter.js to strip all CORS blocks automatically -->
-    <script src="https://puter.com"></script>
+    <!-- Puter library to handle the network bypass -->
+    <script src="https://js.puter.com/v2/"></script>
 </head>
 <body>
 
-    <div id="content">Loading live text file from Google Drive...</div>
+    <div id="content">Loading live text file...</div>
 
     <script>
-        // Paste your validated Google Drive ID here
+        // Paste your Google Drive ID here
         const GOOGLE_FILE_ID = '1IFSlOtUmVBgS1zxQNA1-nOYuL5EsIaVV'; 
 
-        function loadText() {
-            // Standard direct download url format
-            const targetUrl = `https://google.com{GOOGLE_FILE_ID}`;
+        async function loadText() {
+            try {
+                // Direct Google download URL
+                const targetUrl = `https://google.com{GOOGLE_FILE_ID}`;
 
-            // Puter bypasses browser cross-origin policy natively
-            puter.js.fetch(targetUrl)
-                .then(response => {
-                    if (!response.ok) throw new Error('Network error');
-                    return response.text();
-                })
-                .then(text => {
-                    // Render the text successfully onto your site
-                    document.getElementById('content').textContent = text;
-                })
-                .catch(error => {
-                    console.error(error);
-                    document.getElementById('content').textContent = 'Failed to load content. Confirm the Drive file is set to "Anyone with the link".';
-                });
+                // Correct Puter function to pull the data CORS-free
+                const response = await puter.net.fetch(targetUrl);
+                if (!response.ok) throw new Error('Network response failed');
+                
+                const text = await response.text();
+                document.getElementById('content').textContent = text;
+            } catch (error) {
+                console.error(error);
+                document.getElementById('content').textContent = 'Failed to load content. Ensure the file in Drive is shared.';
+            }
         }
 
-        // Run as soon as the library finishes initialization
+        // Wait for the library to load, then run immediately
         puter.ready().then(loadText);
 
-        // Fetch updates every 60 seconds from your third-party software edits
+        // Check for edits from your 3rd party app every 60 seconds
         setInterval(loadText, 60000);
     </script>
 </body>
