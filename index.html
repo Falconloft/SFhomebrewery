@@ -1,43 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live TXT Document</title>
-    <style>
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-            max-width: 800px; 
-            margin: 40px auto; 
-            padding: 0 20px; 
-            line-height: 1.6; 
-            white-space: pre-wrap; 
-            color: #333;
-        }
-        #content {
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-        }
-    </style>
-</head>
-<body>
-
-    <div id="content">Loading live text file...</div>
-
-    <script>
-        // Paste your validated Google Drive ID here:
-        const GOOGLE_FILE_ID = '1IFSlOtUmVBgS1zxQNA1-nOYuL5EsIaVV'; 
-
         async function loadText() {
             try {
-                // This native Google API endpoint converts the file stream into an unlocked web response
-                const url = `https://google.com\${GOOGLE_FILE_ID}`
+                // A reliable public test endpoint that outputs a plain text message
+                const url = "https://baconipsum.com";
                 
-                // Fetch directly with zero third-party dependencies or external proxy wrappers
                 const response = await fetch(url);
-                if (!response.ok) throw new Error('Google connection failed');
+                if (!response.ok) throw new Error('Connection failed');
                 
                 const text = await response.text();
                 document.getElementById('content').textContent = text;
@@ -46,12 +13,3 @@
                 document.getElementById('content').textContent = 'Failed to sync content. Retrying...';
             }
         }
-
-        // Run immediately when page opens
-        loadText();
-
-        // Check for updates from your 3rd party app every 60 seconds
-        setInterval(loadText, 60000);
-    </script>
-</body>
-</html>
