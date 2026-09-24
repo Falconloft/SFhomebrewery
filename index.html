@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live Google Drive Text Page</title>
+    <title>Live TXT Document</title>
     <style>
         body { 
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
@@ -11,7 +11,7 @@
             margin: 40px auto; 
             padding: 0 20px; 
             line-height: 1.6; 
-            white-space: pre-wrap; 
+            white-space: pre-wrap; /* This preserves your text line breaks */
             color: #333;
         }
         #content {
@@ -24,16 +24,16 @@
 </head>
 <body>
 
-    <div id="content">Loading live document content...</div>
+    <div id="content">Loading live text file...</div>
 
     <script>
-        // 1. paste your long random Google Drive file ID between the quotes below:
+        // 1. Paste your long Google Drive File ID between the single quotes below:
         const GOOGLE_FILE_ID = '1IFSlOtUmVBgS1zxQNA1-nOYuL5EsIaVV'; 
 
         async function loadText() {
             try {
-                // This URL forces Google to export the document as plain text
-                const url = `https://google.com{GOOGLE_FILE_ID}&exportFormat=txt`;
+                // This specific URL template bypasses viewer formatting and loads the raw text data
+                const url = `https://google.com{GOOGLE_FILE_ID}`;
                 
                 const response = await fetch(url);
                 if (!response.ok) throw new Error('Network response was not ok');
@@ -42,14 +42,14 @@
                 document.getElementById('content').textContent = text;
             } catch (error) {
                 console.error(error);
-                document.getElementById('content').textContent = 'Failed to load content from Google Drive. Please ensure the file is set to "Anyone with the link can view".';
+                document.getElementById('content').textContent = 'Failed to load content. Ensure the file in Drive is set to "Anyone with the link can view".';
             }
         }
 
-        // Load the text immediately when the page opens
+        // Load the text immediately when someone opens the site
         loadText();
 
-        // Check for updates automatically every 60 seconds
+        // Check for text updates automatically every 60 seconds
         setInterval(loadText, 60000);
     </script>
 </body>
