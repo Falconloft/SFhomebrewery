@@ -21,36 +21,41 @@
             border: 1px solid #ddd;
         }
     </style>
+    <!-- Include Puter.js to strip all CORS blocks automatically -->
+    <script src="https://puter.com"></script>
 </head>
 <body>
 
-    <div id="content">Loading live text file...</div>
+    <div id="content">Loading live text file from Google Drive...</div>
 
     <script>
-        // Paste your confirmed Google Drive ID here:
+        // Paste your validated Google Drive ID here
         const GOOGLE_FILE_ID = '1IFSlOtUmVBgS1zxQNA1-nOYuL5EsIaVV'; 
 
-        async function loadText() {
-            try {
-                // The new direct usercontent link format that bypasses the Google blocks
-                const targetUrl = `https://usercontent.com{GOOGLE_FILE_ID}&export=download`;
-                
-                // Wrap it in the CORS proxy
-                const proxyUrl = `https://corsproxy.io{encodeURIComponent(targetUrl)}`;
-                
-                const response = await fetch(proxyUrl);
-                if (!response.ok) throw new Error('Network response failed');
-                
-                const text = await response.text();
-                document.getElementById('content').textContent = text;
-            } catch (error) {
-                console.error(error);
-                document.getElementById('content').textContent = 'Failed to load content. Connecting to Google Drive...';
-            }
+        function loadText() {
+            // Standard direct download url format
+            const targetUrl = `https://google.com{GOOGLE_FILE_ID}`;
+
+            // Puter bypasses browser cross-origin policy natively
+            puter.js.fetch(targetUrl)
+                .then(response => {
+                    if (!response.ok) throw new Error('Network error');
+                    return response.text();
+                })
+                .then(text => {
+                    // Render the text successfully onto your site
+                    document.getElementById('content').textContent = text;
+                })
+                .catch(error => {
+                    console.error(error);
+                    document.getElementById('content').textContent = 'Failed to load content. Confirm the Drive file is set to "Anyone with the link".';
+                });
         }
 
-        loadText();
-        // Checks for your 3rd party app updates every 60 seconds
+        // Run as soon as the library finishes initialization
+        puter.ready().then(loadText);
+
+        // Fetch updates every 60 seconds from your third-party software edits
         setInterval(loadText, 60000);
     </script>
 </body>
