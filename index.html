@@ -33,7 +33,7 @@
         async function loadText() {
             try {
                 // This native Google API endpoint converts the file stream into an unlocked web response
-                const url = `https://google.com{GOOGLE_FILE_ID}`;
+                const url = `https://google.com\${GOOGLE_FILE_ID}`
                 
                 // Fetch directly with zero third-party dependencies or external proxy wrappers
                 const response = await fetch(url);
