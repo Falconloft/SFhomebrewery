@@ -1,53 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live TXT Document</title>
-    <style>
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-            max-width: 800px; 
-            margin: 40px auto; 
-            padding: 0 20px; 
-            line-height: 1.6; 
-            white-space: pre-wrap; 
-            color: #333;
-        }
-        #content {
-            background: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-        }
-    </style>
+  <meta charset="utf-8">
+  <title>Drive File Viewer</title>
 </head>
 <body>
+  <pre id="file-content">Loading...</pre>
 
-    <div id="content">Loading live text file...</div>
+  <script>
+    const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzHwhWzJvANvcHvOw2fz8ZhVjBPXBSk3k5L10eIachZpbqNE1dyhoHAYuIOA7kBVQyh/exec';
 
-    <script>
-        async function loadText() {
-            try {
-                // A reliable, unblocked public text endpoint for testing the connection structure
-                const url = "https://baconipsum.com";
-                
-                const response = await fetch(url);
-                if (!response.ok) throw new Error('Connection failed');
-                
-                const text = await response.text();
-                document.getElementById('content').textContent = text;
-            } catch (error) {
-                console.error(error);
-                document.getElementById('content').textContent = 'Failed to sync content. Retrying...';
-            }
-        }
-
-        // Run immediately when page opens
-        loadText();
-
-        // Check for updates every 60 seconds
-        setInterval(loadText, 60000);
-    </script>
+    fetch(APPS_SCRIPT_URL)
+      .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.text();
+      })
+      .then(text => {
+        document.getElementById('file-content').textContent = text;
+      })
+      .catch(error => {
+        document.getElementById('file-content').textContent = 'Error loading file: ' + error.message;
+      });
+  </script>
 </body>
 </html>
