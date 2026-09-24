@@ -21,38 +21,36 @@
             border: 1px solid #ddd;
         }
     </style>
-    <!-- Puter library to handle the network bypass -->
-    <script src="https://js.puter.com/v2/"></script>
 </head>
 <body>
 
     <div id="content">Loading live text file...</div>
 
     <script>
-        // Paste your Google Drive ID here
+        // Paste your validated Google Drive ID here:
         const GOOGLE_FILE_ID = '1IFSlOtUmVBgS1zxQNA1-nOYuL5EsIaVV'; 
 
         async function loadText() {
             try {
-                // Direct Google download URL
-                const targetUrl = `https://google.com{GOOGLE_FILE_ID}`;
-
-                // Correct Puter function to pull the data CORS-free
-                const response = await puter.net.fetch(targetUrl);
-                if (!response.ok) throw new Error('Network response failed');
+                // This native Google API endpoint converts the file stream into an unlocked web response
+                const url = `https://google.com{GOOGLE_FILE_ID}`;
+                
+                // Fetch directly with zero third-party dependencies or external proxy wrappers
+                const response = await fetch(url);
+                if (!response.ok) throw new Error('Google connection failed');
                 
                 const text = await response.text();
                 document.getElementById('content').textContent = text;
             } catch (error) {
                 console.error(error);
-                document.getElementById('content').textContent = 'Failed to load content. Ensure the file in Drive is shared.';
+                document.getElementById('content').textContent = 'Failed to sync content. Retrying...';
             }
         }
 
-        // Wait for the library to load, then run immediately
-        puter.ready().then(loadText);
+        // Run immediately when page opens
+        loadText();
 
-        // Check for edits from your 3rd party app every 60 seconds
+        // Check for updates from your 3rd party app every 60 seconds
         setInterval(loadText, 60000);
     </script>
 </body>
