@@ -11,7 +11,7 @@
             margin: 40px auto; 
             padding: 0 20px; 
             line-height: 1.6; 
-            white-space: pre-wrap; /* This preserves your text line breaks */
+            white-space: pre-wrap; 
             color: #333;
         }
         #content {
@@ -27,29 +27,34 @@
     <div id="content">Loading live text file...</div>
 
     <script>
-        // 1. Paste your long Google Drive File ID between the single quotes below:
-        const GOOGLE_FILE_ID = '1IFSlOtUmVBgS1zxQNA1-nOYuL5EsIaVV'; 
+        // 1. Paste your Google Drive ID here:
+        const GOOGLE_FILE_ID = 'PASTE_YOUR_FILE_ID_HERE'; 
 
         async function loadText() {
             try {
-                // This specific URL template bypasses viewer formatting and loads the raw text data
-                const url = `https://google.com{GOOGLE_FILE_ID}`;
+                // The raw Google Drive download URL
+                const targetUrl = `https://google.com{1IFSlOtUmVBgS1zxQNA1-nOYuL5EsIaVV}`;
                 
-                const response = await fetch(url);
+                // Routes the request through a proxy to bypass Google's security wall
+                const proxyUrl = `https://allorigins.win{encodeURIComponent(targetUrl)}`;
+                
+                const response = await fetch(proxyUrl);
                 if (!response.ok) throw new Error('Network response was not ok');
                 
-                const text = await response.text();
-                document.getElementById('content').textContent = text;
+                const data = await response.json();
+                
+                // Places the unblocked text onto your webpage
+                document.getElementById('content').textContent = data.contents;
             } catch (error) {
                 console.error(error);
-                document.getElementById('content').textContent = 'Failed to load content. Ensure the file in Drive is set to "Anyone with the link can view".';
+                document.getElementById('content').textContent = 'Failed to load content. Ensure the file in Drive is shared.';
             }
         }
 
-        // Load the text immediately when someone opens the site
+        // Load immediately on page open
         loadText();
 
-        // Check for text updates automatically every 60 seconds
+        // Check for updates automatically every 60 seconds
         setInterval(loadText, 60000);
     </script>
 </body>
