@@ -1,1 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Text Page</title>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; line-height: 1.6; white-space: pre-wrap; }
+    </style>
+</head>
+<body>
+    <div id="content">Loading...</div>
+    <script>
+        async function loadText() {
+            try {
+                // Replace with your raw GitHub text file URL
+                const response = await fetch('https://drive.google.com/uc?export=download&id=1IFSlOtUmVBgS1zxQNA1-nOYuL5EsIaVV');
+                const text = await response.text();
+                document.getElementById('content').textContent = text;
+            } catch (error) {
+                document.getElementById('content').textContent = 'Failed to load content.';
+            }
+        }
+        loadText();
+        // Optional: Refresh every 60 seconds
+        setInterval(loadText, 60000);
+    </script>
+</body>
+</html>
 
