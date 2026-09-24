@@ -1,6 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live TXT Document</title>
+    <style>
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            max-width: 800px; 
+            margin: 40px auto; 
+            padding: 0 20px; 
+            line-height: 1.6; 
+            white-space: pre-wrap; 
+            color: #333;
+        }
+        #content {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="content">Loading live text file...</div>
+
+    <script>
         async function loadText() {
             try {
-                // A reliable public test endpoint that outputs a plain text message
+                // A reliable, unblocked public text endpoint for testing the connection structure
                 const url = "https://baconipsum.com";
                 
                 const response = await fetch(url);
@@ -10,6 +39,15 @@
                 document.getElementById('content').textContent = text;
             } catch (error) {
                 console.error(error);
-                document.getElementById('content').textContent = 'Failed to sync content....';
+                document.getElementById('content').textContent = 'Failed to sync content. Retrying...';
             }
         }
+
+        // Run immediately when page opens
+        loadText();
+
+        // Check for updates every 60 seconds
+        setInterval(loadText, 60000);
+    </script>
+</body>
+</html>
