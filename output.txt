@@ -1,0 +1,2241 @@
+```metadata
+title: Ashes of Sol
+description: ''
+tags: []
+renderer: V3
+theme: Blank
+snippets:
+  - name: brew_snippets
+    subsnippets:
+      - name: example snippet
+        gen: >-
+
+          The text between `\snippet title` lines will become a snippet of name
+          `title` as this example provides.
+
+
+          This snippet is accessible in the brew tab, and will be inherited if
+          the brew is used as a theme.
+bleedSize: {}
+safetySpace: {}
+trimSize: {}
+
+```
+
+```css
+
+@font-face { font-family: Title; src: url('https://falconloft.github.io/SFhomebrewery/fonts/Dessau Bold.ttf')}
+
+@font-face {font-family: SubT; src: url('https://falconloft.github.io/SFhomebrewery/fonts/FuturaLT-Bold.woff')}
+
+@font-face {font-family: SubTI; src: url('https://falconloft.github.io/SFhomebrewery/fonts/FuturaLT-BoldOblique.woff')}
+
+@font-face {font-family: Regular; src: url('https://falconloft.github.io/SFhomebrewery/fonts/FuturaLT-Book.woff')}
+
+@font-face {font-family: RegularI; src: url('https://falconloft.github.io/SFhomebrewery/fonts/FuturaLT-BookOblique.woff')}
+
+@font-face {font-family: Bold; src: url('https://falconloft.github.io/SFhomebrewery/fonts/FuturaLT-Heavy.woff')}
+
+@font-face {font-family: BoldI; src: url('https://falconloft.github.io/SFhomebrewery/fonts/FuturaLT-HeavyOblique.woff')}
+
+:root {
+  --HB_Color_Background: transparent;
+  --HB_Color_Accent: transparent;
+  --HB_Color_HeaderUnderline: transparent;
+  --HB_Color_HorizontalRule: transparent;
+  --HB_Color_HeaderText: transparent;
+  --HB_Color_MonsterStatBackground: transparent;
+  --HB_Color_CaptionText: transparent;
+  --HB_Color_WatercolorStain: transparent;
+  --HB_Color_Footnotes: transparent;
+
+  --colgap: 0.8cm;
+  --coverpw: 4.5in;
+  --cwp18: 0%;
+  
+  --h1c: #3F6C8F;
+  --h1s: 56pt;
+  --h2c: #304862;
+  --h2s: 24pt;
+  --h3c: #8F6C3F;
+  --h3s: 16.4pt;
+  --h456c: black;
+  --h4s: 13.4pt;
+  --h5s: 11.6pt;
+  --h6s: 10.4pt;
+  --hpwide: 60%;
+  --hpmar: calc((100% - var(--hpwide))/2);
+  
+  --introbg: #203242aa;
+  --introc: #fff;
+  --intros: 10.3pt;
+  --introw: 80%;
+  --intro_tpad_bpad: 1cm;
+  
+  --notet: #8F6C3F;
+  --notew: 92%;
+  --note_lmar_rmar: calc((100% - var(--notew))/2);
+
+  --pgn: #8F6C3F;
+  --pgnmar: 50%;
+  --pwide: 6.139in;
+  --phigh: 9.213in;
+  --pgpin: 1.0cm;
+  --pgpout: 1.5cm;
+  --pgpt: 1.0cm;
+  --pgpb: 1.57cm;
+  
+  --shw: 60%;
+  --shml: calc( ( 100% - var(--shw) ) /2 );
+
+  --textc: #111111;
+  --texts: 9.8pt;
+  --tbb: #3F6C8F;
+  --thb: #304862;
+  --tht: #ffffff;
+  --todd: #8F6C3F66;
+  --teven: #8F6C3F33;
+}
+
+/* Removes Drop Caps */
+.page h1+p:first-letter {
+	all: unset;
+}
+
+/* Removes Small-Caps in first line */
+.page h1+p:first-line {
+	all: unset;
+}
+
+.page {
+  width: var(--pwide);
+  height: var(--phigh);
+  background-color: #faf7e8;
+  background-image: none;
+  background-size: 100% 100%;
+  padding: var(--pgpt) var(--pgpin) var(--pgpb) var(--pgpin);
+  column-gap: var(--colgap);
+  line-height: 1.3;
+  mix-blend-mode: darken;
+  hyphens: auto;
+}
+
+.page:nth-child(even) { padding-right: var(--pad-outer) !important; }
+.page:nth-child(odd)  { padding-left:  var(--pad-outer) !important; }
+.page:where(#p1) {
+background-color: var(--h1c) !important;
+}
+
+.page .columnSplit+h2 {
+  margin-top: -6px !important;
+}
+
+.columnWrapper::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background-image: url('https://falconloft.github.io/SFhomebrewery/images/light-gray-kraft-paper-textured-background-50.jpg');
+  background-size: cover;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: multiply;
+}
+
+/*Fonts */
+
+h1 {
+  color: var(--h1c);
+  column-span: all; 
+  font-family: Title !important; 
+  font-weight: normal !important;
+  font-size: var(--h1s) !important;
+  line-height: 1 !important;
+  margin-bottom: 20px; 
+  text-align: center;
+  text-transform: uppercase !important;
+  margin-top:-10px;
+  z-index: 100;
+}
+
+    h1+table {
+      margin-top: 0px;
+    }
+    
+    h1+h2 {
+        padding-top: 0px;
+    }
+
+.classtitle {
+  color: var(--h1c);
+  font-family: Title !important; 
+  font-weight: normal !important;
+  font-size: var(--h1s) !important;
+  line-height: 1 !important;
+  text-align: left;
+  text-transform: uppercase !important;
+  margin-top:-10px;
+  float: left;
+}
+
+.classstats {
+  color: var(--textc);
+  font-family: Regular !important; 
+  font-weight: normal !important;
+  font-size: 10pt !important;
+  line-height: 1.4 !important;
+  margin-bottom: 0px; 
+  text-align: left;
+  margin-right: 10px;
+  margin-top: 0px;
+  float: right;
+  border-left: 2px solid var(--h1c);
+  padding-top: 0px;
+  padding-left: 3px;
+}
+
+h2 {
+  color: var(--h2c);
+  font-family: title !important;
+  font-size: var(--h2s) !important;
+  font-weight: normal !important;
+  line-height: 1;
+  margin-bottom: -2px;
+  margin-top:-5px !important;
+  text-transform: uppercase !important;
+  z-index: 100;
+}
+
+    h2+h3 {
+      margin-top: 3px;
+    }
+
+    h2+h5 {
+      margin-top: 3px;
+    }
+
+    h2+p {
+      margin-top: 1px;
+    }
+
+h3 {
+  color: var(--h3c);
+  font-family: SubT !important;
+  font-size: var(--h3s) !important;
+  line-height: 1;
+  text-transform: uppercase !important;
+  letter-spacing: 0.5px;
+  z-index: 100;
+  margin-bottom: 0px;
+}
+
+h4 {
+  color: var(--h456c);
+  font-family: SubT;
+  font-size: var(--h4s) !important;
+  text-transform: uppercase !important;
+  line-height: 1;
+  letter-spacing: 0.5px;
+  z-index: 100;
+  margin-bottom: 2px;
+}
+
+h5 {
+  border-bottom: 2px black solid;
+  color: var(--h456c);
+  font-family: SubTI;
+  font-size: var(--h5s) !important;
+  line-height: 1;
+  margin-bottom: 2px;
+  z-index: 100;
+  font-style: italic;
+  text-transform: uppercase !important;
+  letter-spacing: 0.6px;
+}
+
+h6 {
+  color: var(--h456c);
+  font-family: SubT;
+  font-size: var(--h6s) !important;
+  letter-spacing:0.5px; 
+  line-height: 1;
+  text-indent: 6px;
+  text-transform: uppercase !important;
+  z-index: 100;
+  margin-top: 15px;
+}
+
+    h6+table {
+      margin-top: 0px;
+    }
+
+p {
+  color: var(--textc);
+  hyphens: auto;
+  font-size: var(--texts) !important;
+  text-align: left;
+  z-index: 100;
+  font-family: Regular, sans-serif;
+}
+
+    p+ol, p+ul {
+      margin-top: 1px;
+
+    }
+    
+    p+h2, p+h3, p+h4, p+h5, p+h6 {
+      margin-top: 15px !important;
+    }
+
+    p+p, p+.last {
+      padding-top: 0.8em;
+    }
+
+strong {
+  font-family: bold; 
+  letter-spacing: 0.5px !important
+}
+
+em {
+  letter-spacing: 0px !important; 
+  font-family: RegularI;
+}
+
+ul {
+  color: var(--textc);
+  hyphens: auto;
+  font-family: Regular;
+  font-size: var(--texts) !important;
+  line-height:1.3;
+  text-align: left;
+  margin-bottom: 15px
+}
+
+    ul+h2, ul+h3, ul+h4, ul+h5, ul+h6, ol+h2, ol+h3, ol+h4, ol+h5, ol+h6, note+h2, note+h3, note+h4, note+h5, note+h6, .block+h2, .block+h3, .block+h4, .block+h5, .block+h6  {
+      margin-top: 15px !important;
+    }
+
+    ul+p, ul+.last {
+      margin-top:4px;
+    }
+
+    ul+dl {
+      margin-top:2px;
+    }
+
+ol {
+  color: var(--textc);
+  hyphens: auto;
+  font-family: Regular;
+  font-size: var(--texts) !important;
+  line-height:1.3;
+  text-align: left; 
+  margin-bottom: 15px
+}
+
+    ol+h2, ol+h3, ol+h4, ol+h5 {
+      margin-top: 8px !important;
+    }
+
+    ol+h6 {
+      margin-top: 15px;
+    }
+
+    ol+p, ol+.last {
+      margin-top: 0.8em;
+    }
+
+li {
+  color: var(--textc);
+  hyphens: auto;
+  font-family: Regular;
+  font-size: var(--texts) !important;
+  line-height:1.3;
+  text-align: left;
+}
+
+dl {
+  color: var(--textc);
+  hyphens: auto;
+  font-family: Regular;
+  font-size: var(--texts) !important;
+  line-height:1.3;
+  text-align: left; 
+}
+
+    dl+h2, dl+h3, dl+h4, dl+h5, dl+h6, dl+p {
+      margin-top: 8px !important;
+    }
+
+    dl+h6 {
+      margin-top: 15px !important;
+    }
+
+    dl+p, dl+.last {
+      padding-top:4px;
+    }
+
+    dl+ul {
+      margin-left: 12px;
+    }
+
+dd {
+  color: var(--textc);
+  hyphens: auto;
+  font-family: Regular;
+  font-size: var(--texts) !important;
+  line-height:1.3;
+  text-align: left; 
+}
+
+dt {
+  color: var(--textc);
+  hyphens: auto;
+  font-family: Bold;
+  font-size: var(--texts) !important;
+  line-height:1.3;
+  text-align: left; 
+  letter-spacing: 0.5px !important
+}
+
+.class+dl {
+  margin-left: 262px;
+  position: absolute;
+  top: 25px;
+  line-height: 1.39 !important;
+}
+
+/* Intro */
+
+.intro {
+  column-span: all !important;
+  display: block !important;
+  width: var(--introw) !important;
+  margin: -1cm 0 0 0 !important;
+  background-color: var(--introbg);
+  padding: var(--intro_tpad_bpad) 6% var(--intro_tpad_bpad) 6%;
+}
+
+.intro p {
+  color: var(--introc);
+  font-family: Regular;
+  font-size: var(--intros) !important;
+  padding-bottom: 0em !important;
+  letter-spacing: 0.4px;
+  line-height:1.4;
+}
+
+/* Last Paragraph on a Page */
+
+.last {text-indent: 0px !important;
+  color: var(--text) !important;
+  line-height:1.4;
+  text-align: justify;
+  text-align-last: justify;
+  margin-bottom: 0px !important;
+}
+
+/* Notes */
+
+.blurb {
+  font-style: italic;
+}
+
+.ex {
+  color: var(--textc);
+  font-family: RegularI;
+  hyphens: auto;
+  line-height: 1.3;
+  margin-left: 8%;
+  margin-right: 8%;
+  text-align: left; 
+  width: 84% !important;
+  font-size: var(--texts);
+  text-align: left; 
+  hyphens: auto;
+}
+
+.block note {  hyphens: auto;
+}
+
+.note {
+  background-color: var(--teven);
+  border: 3px solid var(--notet);
+  border-image: none;
+  color: var(--textc);
+  font-family: Regular;
+  hyphens: auto;
+  line-height: 1.3;
+  margin: 15px var(--note_lmar_rmar) 0px var(--note_lmar_rmar);
+  padding: 10px 10px 10px 10px;
+  text-align: left; 
+  font-size: var(--texts);
+  text-align: left; 
+  width: var(--notew) !important;
+  hyphens: auto !important;
+}
+
+.note h3 {
+  background-color: var(--thb) !important;
+  color: var(--tht);
+  font-family: Bold;
+  font-size: var(--texts) !important;
+  letter-spacing: 1px;
+  padding: 5px 7px 4px 7px;
+  margin: -7px -7px 0px -7px;
+  text-transform: uppercase !important;
+  vertical-align: middle;
+  line-height:1.2;
+}
+
+.note p {
+  font-size: var(--texts);
+  text-align: left; 
+  hyphens: auto;
+  line-height: 1.3;
+  margin: 5px 0px 3px 0px;
+  hyphens: auto !important;
+}
+
+.notec {
+  background-color: var(--teven);
+  box-sizing: border-box;
+  padding: 11px 13px 9px 13px;
+  border-color: var(--h1);
+  border-image: none;
+  border-image-outset: 9px 0;
+  border-style: solid;
+  border-width: 3px;
+  margin: 15px 4% 15px 4%;
+  width: 92% !important;
+  text-align: center;
+  font-size: var(--texts);
+  text-align: left; 
+  hyphens: auto;
+}
+
+.notec h3 {
+  color: var(--h2c);
+  font-size: var(--h6s) !important;
+  border-bottom: 2px var(--h2c) solid;
+  margin-bottom: 3px;
+}
+
+.notec p {
+  font-size: var(--texts);
+  hyphens: auto;
+  text-align: center;
+}
+
+.note+h2, .note+h3, .note+h4, .note+h5, .notec+h2, .notec+h3, .notec+h4, .notec+h5 {
+  padding-top:10px;
+}
+
+/* Tables */
+
+:where(table) {
+  font-size: var(--texts) !important;
+}
+
+table {
+  border: 3px solid var(--tbb);
+  border-collapse: separate;
+  border-spacing: 3px 3px;
+  font-family: Regular !important;
+  line-height: 1.2em !important;
+  margin-bottom: 15px !important;
+  margin-top: 15px;
+  width: 100% !important;
+}
+  
+.startequip table {
+  font-size: 9pt !important;
+}
+
+table thead th {
+  background-color: var(--thb) !important;
+  color: var(--tht);
+  font-family: Bold;
+  letter-spacing: 1px;
+  padding: 0.12cm 0.12cm 0.07cm 0.12cm;
+  text-transform: uppercase !important;
+  vertical-align: middle;
+  line-height:1.2;
+}
+
+table tbody tr td {
+  color: var(--textc);
+  font-family: Regular;
+  letter-spacing: 0px;
+  padding: 0.12cm 0.12cm 0.07cm 0.12cm;
+  vertical-align: middle;
+  line-height:1.2;
+  hyphens: auto;
+}
+
+
+table ul, table ol {
+  margin-left:2px;
+  margin-bottom: 0px !important;
+}
+
+
+table tbody tr:nth-child(odd) {
+  background-color: var(--todd);
+}
+
+
+table tr:nth-child(even) td {
+  background-color: var(--teven) !important;
+}
+
+.page table tbody tr td:empty {
+  padding: 0px;
+  border: 0px;
+}
+
+.page table thead tr th:empty {
+  line-height: 0;
+  padding: 0px;
+  border-spacing: -10px -10px !important;
+}
+
+table:has(+ div.columnSplit) {
+  margin-bottom: -100px !important;
+}
+
+table+h2, table+h3, table+h4, table+h5 {
+  padding-top:10px;
+}
+
+/* Page Numbers */
+
+.page .pageNumber {
+  font-family: SubT;
+  font-size: 16pt;
+  color: var(--h2c);
+  position: absolute;
+  bottom: 30px;
+  width: max-content;
+  text-align: center;
+  transform: translateX(-50%);
+}
+
+.page:nth-child(odd) .pageNumber {
+  left: calc(50% + ( var(--pgpout) - var(--pgpin) ) / 2);
+}
+
+.page:nth-child(even) .pageNumber {
+  left: calc(50% - ( var(--pgpout) - var(--pgpin) ) / 2);
+}
+
+.page .index>ul>li {font-family:Bold;text-transform:uppercase}
+
+.page .index ul li ul {text-indent:-10px;text-transform:none;}
+
+.index ul ul li:last-child {margin-bottom: 10px}
+
+/* shadow fix documenmt specific */
+.brewRenderer :where(.pages)>:where(.page) {box-shadow: 4px 4px 20px #ffffff10, -4px 4px 20px #ffffff10, 4px -4px 20px #ffffff10, -4px -4px 20px #ffffff10}
+
+
+.page:nth-child(even) {padding-right: 1.5cm !important;}
+
+.page:nth-child(odd) {padding-left: 1.5cm !important;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+```
+
+# {{font-size:106px!important Ashes}}<br>of sol
+{font-size:70pt!important,margin-top:-5px,line-height:0.85!important,letter-spacing:-1px;color:#faf7e8,text-align:left!important}
+
+![cover](https://falconloft.github.io/SFhomebrewery/images/aoscover2.jpg) {position:absolute,top:-25px,left:-6%,height:110%}
+
+{{skipCounting}}
+
+\page
+:::::::::::::::::::::::::::::::
+{{wide,width:50%,margin-left:25%
+#### Ashes of Sol
+{wide,text-align:center!important,margin-bottom:0px}
+A rules-light science fiction role-playing game
+{wide,text-align:center!important}
+
+###### Developed By
+{wide,text-align:center!important,margin-bottom:0px,text-indent:0px}
+Blake Caparoon
+{wide,text-align:center!important}
+
+The name Ashes of Sol and all layout is ? Blake Caparoon 2026
+{wide,text-align:center!important}
+
+Ashes of Sol is inspired in various parts by Into the Odd, Lamentations of the Flame Princess, The Black Hack, and A Dungeon Game, under apprpiate licences.
+{wide,text-align:center!important}
+}}
+
+{{skipCounting}}
+
+\page
+
+{{skipCounting}}
+
+\page
+
+{{intro
+Humanity's second space age began in the 21st century, driven by the urge to escape an overpopulated and overpolluted Earth. Over the next two centuries, colonies sprung up in almost every available niche. Floating cities hung in the clouds of Venus. Crawlers chased Mercury's terminator. Terraforming was begun on Mars. Millions lived in the asteroid belt.
+
+Then, In 2137, a mining rig discovered a strange object of unknown origin enbedded in a small asteroid. It should have been left alone. It was not. As soon as power was supplied to the object, it revealed itself as what is now known as a blinkgate. Beyond it lay a strange, impossible landscape.
+
+Military personnel and scientists were sent through the gate. Some never made it back. For others some of them, minutes, hours, even years passed they stepped back out. Survivors spoke of strange beings living inside the gate called Orison.
+
+The discovery of an alien life so incomprehensible sent shockwaves through the system. Some began to worship the Orison; others feared them. As tensions grew, gates began opening throughout the system: on the moons of Jupiter, the mountains of Mars, in ancient temples and ruins on Earth.
+
+The gates sparked a final war. Some wished to destroy the gate, others to explore them, and still others to worship the Orison. The ensuing conflict destroyed the remnants of Earth's fragile ecosystem, and a flood of refugees fled across the system. Resource shortages, political instability, and widespread violence followed.
+
+In 2260, humanity struggles to dig itself out of the rubble of the war, the Orison extend their grasp across the system. Many huddle in safety, but not you. You're an Explorer. You leave safety behind, heading out into the wilds of dead planets and into the deadly void of space in search of technology, resources, knowledge... anything that can help rebuild what was lost.
+
+}}
+                                       
+![intro](https://falconloft.github.io/SFhomebrewery/images/thumb-1920-602289.jpg) {position:absolute,top:0%,left:-0%,height:100%}
+
+\page
+
+![intro](https://falconloft.github.io/SFhomebrewery/images/thumb-1920-602289.jpg) {position:absolute,top:0%,left:-100%,height:100%}
+
+\page
+
+# The Rules
+You'll need a group of at least two players. One of these players will be the Gamemaster (GM). He describes the world and how it reacts to the actions the other players take. The rest of the players each control a character in this world known as an explorer. When this section says 'you', its speaking to those players.
+
+## Attributes
+You have four Attributes.
+Fitness (FT):: is innate physical power.
+Discipline (DS):: is physical training.
+Instinct (IN):: is innate mental ability.
+Cognition (CG):: is mental training.
+
+Everything roll you'll make in the game uses these Attributes either directly or indirectly. The higher the number is, the better your explorer is with that Attribute. 
+
+## Turns
+Action happens in Turns. Simply put, a Turn is the time it takes for you to move and take one action. As long as everyone gets a Turn, and as long as each Turn encompasses roughly the same amount of time, there's no need to get more specific that that. 
+
+This applies both in and out of combat. When the group is exploring, talking, or investigating, the GM should move the spotlight from player to player, giving each a Turn to act before circling back. No single player should keep rolling actions while others wait.
+
+\column
+
+The Actions an Explorer can take will depend entirely on the situation; there's not a comprehensive list. There is a limit to how much you can do at once, though. You could fling open a door as you come to it or break it down. You couldn't however, make an attack, juggle kittens and decrypt a computer all at the same time.
+
+##### Readying Actions
+You can ready a conditional action by stating the event that will trigger it and what you want to do in response. If the triggering event happens before your next Turn, you get to take your action before it resolves. If it doesn't, you wait until your next Turn to take an action.
+
+## Throws
+Sometimes, the action you want to take will have an obvious outcome, and the GM will narrate what happens. The GM might ask you for more details, but he'll make the decision.
+
+At other times, an action might be dangerous or uncertain. There may be risks involved. When this happens, the GM will ask you to make a Throw.
+
+##### Easy & Difficult
+If the rules say a Throw is **Easy**, roll twice and take the result you like; if the rules say a Throw is **Difficult**, roll twice and take the result the GM likes. Easy and Difficult don't stack. A roll is either Easy, Difficult, or normal.
+
+{{pageNumber,auto}}
+
+\page
+
+### Skill Throws
+Skills have a Rating from 1 to 6. To make a Skill Throw, roll 1d6 and compare it to your skill's Rating.
+- If the result is **equal to or less than** the Rating you succeed.
+- If the result is **greater than** the Rating you fail -- or succeed at a cost. 
+
+##### Succeeding at a Cost
+If you succeed at a cost, it means that while you did get what you wanted, there's some new complication, or a new faction in play, or perhaps you just owe someone something now. The GM decides the details when needed.
+
+### Usage Throws
+Consumable or depletable resources are assigned a Usage Die (e.g. Ud8). When you make a Usage Throw, you roll that die. If you roll a 1 or 2, the die size steps down one. When you roll a 1 or 2 on Ud4, the resource is depleted.
+
+{{note
+### GM: Using Usage
+Don't track everything. Only track those things that would cause complications when they run out unexpectedly: Ammuni-tion, an NPC's willingness to help the Explorers out... oxygen.
+
+It's okay to say that something has a finite amount of uses if the point isn't to make it dangerous. 
+}}
+
+If you make a ranged attack on an In Reach enemy, but the Throw is Difficult.
+{note}
+
+\column
+
+## Combat
+When you decide to attack something, or when something attacks your character, you're in combat. Combat is conducted in Rounds, in which everyone involved in the combat gets a Turn.
+
+### Combat Throws
+Combat Throws always use a d20. They have a rating equal to the Attribute they rely on. Combat Throws against higher-level enemies also have a Toughness equal to the difference in levels between the Explorer and the enemy.
+- If your Throw is less than your Attribute and greater than the enemy's Toughness, the Throw is successful.
+
+### Sequence
+At the beginning of each Round, each player makes an Instinct Throw.
+1. Players that succeed act first, in the order they prefer.
+2. GM characters act next.
+3. Players that fail act last.
+
+Once everyone has acted, another Round begins with another Instinct Throw.
+
+### Attack
+Make a **Fitness** Throw to attack in melee (In Reach). Make a **Discipline** Throw to make a ranged attack (Close or In Range).
+- If your Throw successful, roll your damage dice; the GM subtracts the result from the enemy's HP.
+- If your Throw is equal to or less than the enemy's Toughness, don't deal damage. Instead, reduce the enemy's Toughness by one.
+
+{{pageNumber,auto}}
+
+\page
+
+##### Damage Types
+Every attack has a Damage Type: Acid, Cold, Electric, Fire, Force, Kinetic, or Psionic. An enemy that is Resistant to the type of damage you deal makes your damage throw Difficult; a Vulnerable enemy makes the damage throw Easy. 
+
+##### ONGOING DAMAGE
+Substances like acid, poison, or fire can deal ongoing damage. If so, treat your damage dice as if they were Usage Dice. Roll them every turn against that enemy until they deplete, or until the enemy acts to negate the effect.
+
+### Move
+Everything has a position which amounts to two things: where it is and its distance to other things. Positioning uses range bands. From near to far:
+Reach: ::You're able to make melee attacks against enemies in Reach, and they're able to attack you in melee.
+Close: ::You're able to get to something with one move, but it can't attack you in melee yet.
+In Range: ::You can make ranged attacks against it and it can make ranged attacks against you.
+Distant: ::Far enough away that it'll take you at *least* two moves to get there.
+
+A Move can take you one **range band** closer to or farther from an enemy or ally. You can use your Action to Move a second time. 
+
+##### Breaking Free
+When you try to move away from an in Reach enemy, or you move through an enemy's Reach, you must Break Free. Make a **Discipine** Throw. If you fail, choose to stop in the enemy's Reach or give them a free immediate attack. 
+
+\column
+
+##### Interception
+When an In Reach enemy tries to move away from you, or tries to move through an area that's In Reach of you, you Intercept. A successful melee attack means the enemy must stop In Reach of you and take damage from the attack.
+
+### Recover
+You can Act to recover HP. Spend any number of your HD, roll them, and heal equal to the result. Spent HD are usable again after a full rest.
+
+### SAVING THROWS??
+At the end of your turn, make a Saving Throw against each negative condition that affects you. Use Fitness for physical effects or Instinct for mental effects.
+
+{{note
+### Other Actions
+You can try to do pretty much anything else as well. Other actions will usually require a Skill Throw or a Combat Throw, usually if the action is potentially dangerous.
+}}
+
+### Defense
+When a threat attacks you, you'll make a **Discipline** Throw to defend in melee or a **Instinct** Throw to defend against a ranged attack. If the Throw is less than your Attribute and greater than the enemy's Toughness, you avoid the attack. Otherwise, it deals damage that you subtract from your HP. 
+
+{{pageNumber,auto}}
+
+\page
+
+##### ONGOING DAMAGE
+When you take Ongoing damage, the damage dice are treated as Usage Dice until they're depleted or until you take action to stop the damage (e.g. jumping in water to extinguish flames).
+
+##### Armor
+Armor has a Value (AV). You gain a pool of d6s (known as Armor Dice) equal to the AV. If your explorer would take damage, you can spend and roll any number of Armor Dice and reduce the incoming damage by the result, then reduce your Armor's AV by the number of dice you spent.
+
+When you rest, roll each spent Armor Die again. If you get a higher result this time increase your AV by one. Since you can't roll higher than six, any Armor Die that rolled 6 originally can just be discarded.
+
+### Death
+When you are reduced to 0 HP, roll 2d6.
+- If your result is **higher than the number of Scars you have**, you?re still alive. Gain a new Scar. After Combat is over, you?ll be able to heal.
+- If the result is **equal to the number of scars you have or lower**, you succumb to your injuries and die.
+
+If any of your Attributes reach 0, you?re also dead.
+{note}
+
+\column
+
+##### NPC Death
+When an NPC is reduced to 0 HP, it is incapacitated and can take no further actions. The GM will rule if it is unconcious or dead.
+
+### Ending Combat
+Combat ends when one side is down or decides to flee. You must decide as a group with the other players when it makes sense for you to flee. If you decide to flee, narrate how you escape, but expect the GM to make things worse for you later as a result.
+
+If half the enemies in a fight (or the strongest single enemy) are reduced to 0HP, a successful Influence Throw in place of an attack -- with Toughness from the enemy that currently has the most HP -- will cause the enemy side to flee.
+
+When combat ends, explorers at 0 HP regain 1d4 HP as long as you are victorious or they escape with you.
+
+### Resting
+Once per day you can take a short rest. Roll your all your unspent HD and recover HP equal to half the result, up to your Maximum HP.
+
+Rest somewhere safe for the night to roll all your HD and recover HP equal to the result, up to your Maximum HP. When you rest safely, you can also roll a 1HD and restore an equal number of points in any reduced Attributes, divided as you like, up to their original value.
+
+{{pageNumber,auto}}
+
+\page
+
+# Explorers
+
+## Creation
+To create a character follow all of the steps that follow in order.
+
+### 1. Attributes
+Roll 1d8+5 four times. If no roll is at least 8, begin again. 
+
+Assign the results to your Attributes in any order: Fitness, Discipline, Instinct, Cognition. 
+Fitness (FT):: is innate physical power. It helps you in melee combat, 
+Discipline (DS):: is physical training.
+Instinct (IN):: is innate mental ability.
+Cognition (CG):: is mental training.
+
+### 2. Edge
+Roll once on the *Edges* table below.
+
+###### Edges
+2d4|Bonus
+:---:|:---
+2|Add +1d3 Instinct.
+3|Add +1d3 Fitness.
+4|Gain +1d3 HP that's added after determining your HP at each level.
+5|Your Credit Die never drops below d6, no matter what.
+6|Gain 2AV that regenerates after a full rest.
+7|Add +1d3 Discipline.
+8|Add +1d3 Cognition.
+
+\column
+
+### 3. Occupation
+Roll on the *Occupations* table below to determine what your Occupation was before you became an explorer (or just make one up). When it's relevant to a Skill Throw, the throw is Easy.
+
+###### Occupations
+1d20|Occupation
+:---:|:---
+1|Greywater Disinfector
+2|Universal Church Deacon
+3|Clandestine Courier
+4|Laboratory Test Subject
+5|Debt Collector
+6|Vermin Control Officer
+7|Inveterate Gambler
+8|Nightside Synth-Player
+9|Amateur Surgeon 
+10|Gang Enforcer
+11|Tunnel Performer
+12|Expired Biomass Recycler
+13|Mycelium Harvester
+14|Microhistorian
+15|Scrapheap Scrounger
+16|External Armor Patcher
+17|Salaried Pit-Fighter
+18|Speaker for the Orison
+19|Early Warning Monitor
+20|Corporate Arbitrator
+
+{{pageNumber,auto}}
+
+\page
+
+### 4. Skill Throws
+Skill Throws each have a rating based on an Attribute (listed in parentheses). Find the Attribute listed for each Skill on the *Skill Rating & Credits* table and mark down the matching rating.
+Break (FT): ::break barriers or objects
+Sneak (DS): ::stay unnoticed by hiding and moving quietly
+Notice (IN): ::observe details, detect hidden things.
+Influence (IN): ::persuade others with emotion, logic, or trickery
+Tech (CG): ::understand, use, repair, or sabotage devices
+Traverse (DS): ::jump, climb, or balance; get to hard-to-reach places
+
+###### Skill Ratings
+|Attribute|Rating|
+|:-------:|:----:|
+|6-7      |1     |
+|8-10     |2     |
+|11-13    |3     |
+|14-16    |4     |
+|17-18    |5     |
+
+### 5. Archetype
+Choose your Archetype. Details for each can be found on pages 12-15.
+{{font-family:Regular The}} Bruiser ::is the team's muscle, unparalleled in a fight.
+{{font-family:Regular The}} Junker ::is skilled at surviving where others can't.
+{{font-family:Regular The}} Glitch ::breaks the laws of physics.
+{{font-family:Regular The}} Chordant ::shares their skills with allies.
+
+\column
+
+### 6. Hit Points
+Determine your starting Hit Points (HP) by rolling 1HD (assigned by your archetype) and add half your Explorer's **Fitness**, rounded down.
+
+**1HD + (Fitness/2)**
+{note,text-align:center,text-indent:0px!important,width:var(--hpwide)!important,margin-left:var(--hpmar)!important}
+
+##### Hit Points, Not Health
+Hit Points represent your Explorer's ability to withstand hits that would otherwise incapacitate them. When your explorer succeeds at a defense Throw, they avoid the attack *easily*. If they fail a defense Throw, however, they now have to exert themselves to turn that serious injury into just a minor wound. Each exertion is subtracted from their HP. Eventually, they will not have enough left and a hit will seriously injure them.
+
+##### Scar
+You have one scar, gained in whatever event caused you to become an explorer. Describe it. Once per scene, when you're doing somethig dangerous (combat *is* dangerous) you can adjust your roll up or down an amount equal to the number of scars you have.
+
+{{pageNumber,auto}}
+
+\page
+
+### 7. Psionics
+You have the option to grant your explorer psionic powers, but it comes at a cost. If you choose to **Awaken** your explorer, follow the steps on page XX.
+
+You can Awaken as many times as you like when you create your explorer. Just be careful! If your HP or an Attribute is reduced to 0, you're dead and have to start over.
+
+### 8. Equip
+Find your highest Attribute on the *Equipment* tables on the next two pages and match it against your starting HP to determine your starting package.
+
+Descriptions of starting items can be found in the item lists starting on page 10.
+{note}
+
+##### Credits
+You also begin with a Credit Die. Its starting size is determined by your Cognition (see the *Skill Ratings & Credits* table).
+
+###### Starting Credit
+|Cognition|Credit|
+|:-------:|:-----:|
+|6-8      |Ud4    |
+|9-13     |Ud6    |
+|14-16    |Ud8    |
+
+\column
+
+## Advancement
+Your character advances by gaining experience and then spending that experience to gain new levels. 
+
+### Experience
+Experience measures a Explorer's development as they adventure and grow in power. The GM is the final judge of when Experience is due, but should use these examples as a guide:
+- You discover a major new threat.
+- You complete a mission.
+- You overcome, disable, or survive a deadly and powerful threat.
+- You succeed or fail in such a spectacular manner that everyone at the table agrees it?s worth it.
+
+### Levelling up
+Once you have acquired a number of Experience equal to 2 + your current Level you may spend your next  rest to gain a level. Afterwards, reset your Experience to 0.
+
+When your Hero gains a new level, do these things:
+1. Make a Throw for each Attribute. On a failure, gain +1 to that Attribute, to a maximum of 18. The Throw for one Attribute of your choice is Easy.
+2. Recheck skills if any of your Attributes increased.
+3. Gain an additional Hit Die, then roll all your Hit Dice. If the result is greater than your Maximum HP, the result is your new Maximum HP.
+4. Choose whether to Awaken (p. 21).
+
+{{pageNumber,auto}}
+
+\page
+
+{{wide,width:95%,margin-left:5%,margin-top:-5%,startequip
+###### Highest Attribute
+{text-align:center}
+###### Maximum HP
+{position:absolute,writing-mode:sideways-lr,text-align:center,height:20%!important,top:40%,left:10.7%}
+| | | | | | | |
+|:-7%-:|:-15%-|:-15%-|:-15%-|:-15%-|:-15%-|:-15%-|
+| |{{font-size:var(--h6s),width:10%!important,margin-left:45% **6**}} |{{font-size:var(--h6s),width:10%!important,margin-left:45% **7**}} |{{font-size:var(--h6s),width:10%!important,margin-left:45% **8**}} |{{font-size:var(--h6s),width:10%!important,margin-left:45% **9**}} |{{font-size:var(--h6s),width:10%!important,margin-left:45% **10**}} |{{font-size:var(--h6s),width:10%!important,margin-left:45% **11**}} |
+|{{font-size:var(--h6s) **7-8**}} | laser pistol, singularity knife, *a ring embedded with emotions from a child's last embrace*, Awaken || heavy microwave rifle, laser rifle, stun baton, *a heavy copper coin that always lands on edge when flipped* || scrap mace, solar positioning device, *a small cube that alters the texture of your skin*, Awaken||
+|{{font-size:var(--h6s) **10**}} | singularity rifle, ceramic steel armor, military walker, Awaken || stun baton, anti?proton pistol, optic disruptor, Awaken || cryonic rifle, laser rifle, *ring that reduces gravity by 5%*, Awaken ||
+|{{font-size:var(--h6s) **11**}} | railgun, vibro dagger, civilian walker, Awaken || vibrosword, energy cell, stun baton, Awaken || kinetic rifle, vibro dagger, civilian walker, Awaken||
+|{{font-size:var(--h6s) **12**}} | monowire blade, fractal scatter, civilian walker, sonic excavator || disintegrator rifle, fractal scatter, civilian walker, sonic excavator || heavy plasma rifle, vibro dagger, plasma mine, laser torch||
+|{{font-size:var(--h6s) **13**}} | heavy vibrosword, plasma mine, laser pistol, *a crystal that vibrates so much it's almost audible* || vibrosword, vibro dagger, nanoweave cable, *pair of antique smart glasses that replays strange ads* || tesla rifle, vibro dagger, civilian walker, *telescoping rod that, doesn't break*||
+|{{font-size:var(--h6s) **14**}} | heavy plasma rifle, vibro dagger, plasma mine, laser torch || laser rifle, vibro dagger, civilian walker, Awaken || laser rifle, civilian flyer, anesthizine, Awaken ||
+|{{font-size:var(--h6s) **15**}} | laser pistol, plastiflesh, laser torch, *ancient ball made of,rubber wrapped in cloth* || vibro dagger, pyrophoric gel, scrap mace, *a scrap of cloth that causes nausea when touched* || stun baton, acid, survey scope, *a tiny lidded box that opens to the vacuum of space*||
+|{{font-size:var(--h6s) **16**}} |laser pistol, plasma mine, sonic excavator, *a small screen that shows a slightly different version of, any room you're in* || laser rifle, plasma mine, vibro dagger, *a tiny dome that projects the stars as they look from somewhere other than sol* || scrap mace, grav anchor, nanoseal, *a mirror that shows your face as it was in the past or will be in the future*||
+|{{font-size:var(--h6s) **17**}} | monowire blade, laser rifle, grapnel launcher, *a pair of glasses that lets you see through inorganic objects for a few seconds a day* || vibrosword, stun baton, scrap armor, *a doll made from ancient scrap; it talks ocassionally, though not to you*|| laser pistol, traumakit, ceramic steel armor, *a silver disc that pronounces incorrect diagnoses when placed on a patient*||
+|{{font-size:var(--h6s) **18**}} | scrap mace, laser pistol, grav anchor, *a stone that makes nearby clocks run backward* || vibrosword, flexiscope, laser pistol, *a small pebble that weighs 50 pounds. bulky.* || laser pistol, plastiflesh, laser torch, *a marble that rolls up to,the peak of any hill*||
+|{{font-size:var(--h6s) **19**}} | ^|| ^|| ^||
+}}
+
+{{pageNumber,auto}}
+
+\page
+
+{{wide,width:95%,margin-top:-5%,startequip
+###### Highest Attribute
+{text-align:center}
+###### Maximum HP
+{position:absolute,writing-mode:sideways-lr,text-align:center,height:20%!important,top:40%,right:10.7%}
+| | | | | | | |
+|:-15%-|:-15%-|:-15%-|:-15%-|:-15%-|:-15%-|:-7%-:|
+|{{font-size:var(--h6s),width:10%!important,margin-left:45% **12**}}||{{font-size:var(--h6s),width:10%!important,margin-left:45% **13**}}|{{font-size:var(--h6s),width:10%!important,margin-left:45% **14**}}|{{font-size:var(--h6s),width:10%!important,margin-left:45% **15**}}|{{font-size:var(--h6s),width:10%!important,margin-left:45% **16**}}|
+| sharpened debris, vibro dagger, civilian walker, Awaken || laser pulse rifle, stun baton, military flyer, Awaken || concussion rifle, sonic excavator, laser tripwire, Awaken ||{{font-size:var(--h6s) **7-9**}} |
+| disintegrator pistol, fractal scatter, civilian walker, sonic excavator || anti?proton rifle, fractal scatter, civilian walker, sonic excavator || microwave rifle, fractal scatter, civilian walker, sonic excavator||{{font-size:var(--h6s) **10**}} |
+| neural disruptor, laser pistol, 2 acid, *a talking encyclopedia from so long ago it's usually wrong* || stun baton, civilian flyer, vibro dagger, *the last flower that grew on a lost colony world* || plasma rifle, stun baton, acid, *a small box that produces cold blue fire*||{{font-size:var(--h6s) **11**}} |
+| singularity sword, cargo hauler, stun baton, *a map that auto-centers on you; it doesn't match current roads* || particle projector rifle, grav anchor, laser pistol, *a four-inch cube that rolls when you put it down* || heavy laser rifle, traumakit, pyrophoric gel, *a bottle of self-replicating wine of questionable vintage*||{{font-size:var(--h6s) **12**}} |
+| vibro dagger, laser pistol, scrap armor, *a small chip that plays the same song when you press it* || heavy singularity rifle, stun baton, nanoweave cable, *a helmet that turns thoughts into music* || scrap mace, energy cell, vibro dagger, *a talking mini-drone that has more opinions than facts*||{{font-size:var(--h6s) **13**}} |
+|laser pistol, nanoweave cable, fractal scatter, *a small red gem that duplicates itself for one hour a day* || vibrosword, laser pistol, pyrophoric gel, *a large brass instrument that plays itself every morning* || stun baton, laser pistol, optic disruptor, *a credit bar that holds 1d12 of someone else's credits*||{{font-size:var(--h6s) **14**}} |
+| laser pistol, monowire blade, ceramic steel armor, *a net that blocks electronic signals* || stun baton, anesthizine, sonic wedge, *a set of chimes that interfere with machine minds* || scrap mace, vibro dagger, military flyer, *an old imperial medal that praises you in your sleep*||{{font-size:var(--h6s) **15**}} |
+| scrap mace, mag gloves, laser pistol, *a pen that never runs out of ink* || vibrosword, civilian flyer, pyrophoric gel, *a tiny pendant that holds a small white fire in stasis* || laser pistol, acid, neurotoxin, *a wide-brim waterproof hat*||{{font-size:var(--h6s) **16**}} |
+| stun baton, spray lcd, sonic wedge, *a flat circle you can stand in that teleports you 100 feet in a random direction* || scrap mace, laser pistol, scrap armor, *a musical keyboard that moans when you press its fleshlike keys* || vibro dagger, nanoweave cable, scrap mace, *a tiny model blinkgate; sometimes things pop out*||{{font-size:var(--h6s) **17**}} |
+| vibro dagger, energy shield, laser pistol, *a battery that doesn't die and will charge anything, once* || proton rifle, nanoweave cable, grapnel launcher, *a small ball that always bounces back to you* || laser pistol, scrap mace, plastiflesh , *a choker that makes you sound like the original owner*||{{font-size:var(--h6s) **18**}} |
+| ^|| ^|| ^||{{font-size:var(--h6s) **19**}} |
+}}
+
+{{pageNumber,auto}}
+
+\page
+
+# Bruiser
+**You've never shied away from a fight, and it shows. What made you this way? Did you have to defend yourself growing up? Did you follow a relative into military service? Are you the result of experiments into badly-understood tech from before the fall?**
+
+**Hit Die (HD):** d8
+
+##### Dangerous
+When you fight, you command attention. Enemies have to pay attention to you whether they like it or not.
+{blurb}
+
+When you deal damage to an enemy, if that enemy attacks an ally without including you as a target, your ally's Throws made to defend against the attack are Easy until the start of your next turn.
+
+##### Reprisal
+You don't just think about the punch you're throwing now, or the one you're dodging. You're already thinking about the next one.
+{blurb}
+
+When you succeessfully defend against a melee attack, deal damage to that enemy equal to half your level, rounded up.
+
+##### Unstoppable
+You're able to force yourself to keep going where others would falter.
+{blurb}
+
+Saving Throws against physical effects and Break Throws are always Easy. If something else would also make them Easy, you succeed automatically.
+\column
+
+##### Overdrive
+When you're outnumbered in the only time you feel truly alive.
+{blurb}
+
+You can make a melee attack against two In Reach or Close enemies, dividing damage between them equally. Explain how you make the attack, and make it interesting. As you gain levels, you gain both the ability to attack more enemies at once and to deal extra damage when using Overdrive as shown on the *Overdrive* table below.
+
+###### Overdrive
+Level|Targets|Bonus Dmg
+|:---:|:---:|:---:|
+1 |2|+0
+2 |2|+1d6
+3 |3|+1d6
+4 |3|+1d6
+5 |3|+2d6
+6 |4|+2d6
+7 |4|+2d6
+8 |4|+3d6
+9 |5|+3d6
+10|5|+4d6
+
+{{pageNumber,auto}}
+
+\page
+
+# Junker
+
+**You grew up away from the relative safety of a community. Did your parents live this way and teach you how to survive? Were you kicked out of the community of your birth? Was is because of an action you took or failed to take, or was it because of who you were or how you looked?**
+:
+Hit Die (HD): ::d6
+:
+##### Hardy
+You haven't had the comfort of civilization for a long time, if ever.
+{blurb}
+
+You gain one additional Hit Die. You also never suffer from natural weather-related cold, heat, or exposure. You can go a few days longer than most people without eating or drinking.
+
+##### Scavenger
+The abandoned places of the system are alien to most people. They're home to you.
+{blurb}
+
+When you make Skill Throws related to survining in the ruins of the system, those Throws are Easy for you. When you use this ability, you need to tell a new story about something that happened to you before you joined up with the group that made this situation easier for you. 
+
+\column
+
+##### Take the Hit
+You know that success isn't always painless.
+{blurb}
+
+During a round that you succeed at your Sequence Throw, you can choose to let a failed attack hit you instead of making a defense Throw. If you do, you can immediately make an attack against the attacking enemy. Once per combat you can instead choose to dodge an attack. If you do, the attack instead hits one random nearby enemy, but you can't use Take the Hit again for the rest of the combat. 
+
+##### Terrain Stunt
+You know the ruins like no one else.
+{blurb}
+
+At the start of each combat in an abandoned or disused environment, roll a d6. Count it down on each of your turns. When it reaches zero, you?ll be able to use your move to execute a terrain stunt. Normally you can only use terrain stunt once per combat, but there could be exceptions. 
+
+Terrain stunts let you use your knowledge of the ruins to your advantage. You could shoot the brace of an unstable catwalk or use a junkpile to get that little bit of altitude you need to attack the out-of-reach enemy. Unlike similar things that any explorer can try, Terrain Stunts don't need a Throw; they just work. If a stunt implies a direct attack on a character, however, the attack needs a Throw.
+
+{{pageNumber,auto}}
+
+\page
+
+# Glitch
+**Something about you has never been right, but no one can quite put their finger on it. Was a parent one of those who lost time in a blinkgate? Was someone in your family subject to neo-corp experiments? Whatever the reason, it seems like physics lets you break the rules.**
+:
+Hit Die (HD): ::d6
+:
+##### Instancing
+You can sometimes be in two (or more!) places at once.
+{blurb}
+
+You can generate a copy of yourself. Explain what makes this copy (e.g. alternate timeline, possible future, hardlight clone, psionic ability). Your current HP is always split equally between instances, rounded down.
+
+If versions of you die, the last surviving copy becomes the PC. Your copies can do everything you can do, and can help you, but the GM also gets to play around with the confusion and suspicion that this causes.
+
+If you're in combat, generating a copy is a Move. On each turn you and each copy get a move, but you can make only one attack.
+
+At 3rd, 7th, and 9th levels, you gain the ability to make an additional copy. At 5th level, you gain the ability to make a second attack, as long as that attack come from a different copy than the first.
+
+\column
+
+##### Blinkstep
+Distance is just a concept that other people have to deal with.
+{blurb}
+
+When not In Reach of any enemy, you can teleport to an enemy In Range and attack. After making the attack, you can teleport back to your starting point if you succeed at a Discipline Throw.
+
+##### Exokinesis
+Sometimes the laws of physics just... lose track of you for a moment or two.
+{blurb}
+
+Once per day, your Move can ignore everything -- gravity, enemies, even solid objects. You need to be back in a position you could normally be in (e.g. on the ground, not in the middle of a wall) at the end of your move. A successful Instinct Throw can extend the effect until your next turn. After that it's a Difficult Throw, and then physics reasserts itself no matter what.
+
+##### Echo
+Causality falters and you gain a glimpse of the future.
+{blurb}
+
+Once per day, before you take your turn, you can see the echo of what will happen for the next few seconds. Take your turn as normal, but jot down actions you take, damage you deal, etc.  At the end of your turn, if you're satisfied with the outcome, it stands. If not, throw your notes away and begin again, but this time, there's no going back. You also can't just duplicate the same actions as the first time around; you've already seen how those turn out.
+{{pageNumber,auto}}
+
+\page
+
+# Chordant
+**You have a knack for helping people, whether its coordinating projects or just keeping them on their feet. Did you have formal training or were you just the only person available when your home was in danger? Did you leave your community because you failed or was there simply no challenge left?**
+:
+Hit Die (HD): ::d6
+:
+##### Specialist
+While you helped others, you learned from them as well.
+{blurb}
+
+Choose two skills. Each of those skills gains a +1 bonus to their normal rating. Each time you gain a new level, make a Throw for any three skills. If the Throw fails, add another +1 bonus to that skill's rating, to a maximum of 6.
+
+A Skill Rating of 6 means that you make the Throw as if it were an Easy rating  5 Throw. An Easy rating 6 Throw automatically succeeds; a Difficult rating 6 Throw is just a rating 5 Throw.
+{note}
+
+##### Coordination
+Two heads are better than one when one of them is yours.
+{blurb}
+
+Once per day, an ally that can see or hear directions from you may use your Skill Roll in place of their own. This increases to twice a day at 5th level and to three times a day at 8th level.
+
+\column
+
+##### Orders
+Things work out better when people just do what you tell them.
+{blurb}
+
+You gain a number of d6s known as Order Dice equal to half your level plus one (rounded up). Spend an Order Die when you give an ally an order -- or suggestion. When they follow your direction, they roll the Order Die along side their normal Throw.
+- If your Order Die's result would be a success for their Throw, their Throw is successful.
+- If both your Order Die and their Throw succeed, they succeed in style and gain some minor bonus effect that the GM approves.
+
+###### Order Dice
+|Level|Dice|
+|:---:|:---:|
+1-2 |2
+3-4 |3
+5-6 |4
+7-8 |5
+9-10 |6
+
+Orders are pretty open-ended: ?Get that bomb defused,? ?Fire at the security drone,? and ?Get back on your feet!? are all orders.
+{note,margin-top:20px}
+
+{{pageNumber,auto}}
+
+\page
+
+# Equipment
+
+## Reputation
+Reputation is currency, and your identity is your bank. The ancient Earth cryptocurrency craze and China's Social Credit System of the early twenty-first century were the foundations for Zh?ng Securident to birth a new form of financial surety. Backed by every pre-Fall megacorp and most governments -- on Earth and in the colonies -- the Zh?ng Services Exchange was a virtual trading floor when services of all types are valued and traded. That original infrastructure bloc is shattered now, but it's surviving pieces operate much the same. The only difference is now when you travel to a place that has no reliable way to check your reputation, you have to take it with you. 
+
+When you buy something from someone, you digitally sign a gaurantee to render an equal amount of service in return, based on the current CSE rates. If your seller doesn't need those services, they'll list them on the Exchange. Eventually someone will contact you who needs yoru help with something you're good at.
+
+Your explorer's reputation -- and therefore their purchasing power -- is abstracted as a Usage Die, otherwise known as the ?hang Die (?D). It will step up and down in size as you purchase and sell items.
+
+\column
+
+##### Credit Chips
+You can convert your CD into a credit chip. This is a one-time use item with a value equal to your Credit Die at the time of conversion. After you convert your credit, you effective credit is zero, unless you sell more items or finish a job for someone -- or re-convert your chip back to normal credit. You'll need to do this when you travel long distances. 
+
+However, you can use your credit chip in one more way. While you normally can't get above a d12 on your ?D, you can save credit chips and then spend them to add their value to any Purchase Throw, discarding spent chips afterward. You may also from time to time find credit chips that work in the same way.
+
+## Item Value
+The value of an item is determined by it's Rarity. Normally, the GM will set the cost, but if needed, it can be found using the *Item Cost* table below.
+
+###### Item Rarity
+|Rarity      |Cost|
+|:-----------|:----|
+|Common (C)  |1d4 (3)|
+|Uncommon&nbsp;(U)&nbsp;|2d4 (5)|
+|Rare (R)    |2d6 (7)|
+|Unique (Q)  |2d8 (9)|
+
+{{pageNumber,auto}}
+
+\page
+
+##### Unique Items
+Unique items are always unique. They're either hand made or prototypes. Going elsewhere isn't going to help you find another one.
+
+## Purchasing
+To purchase an item, make a Throw using your CD. If your result is greater than the cost, you have enough money to purchase the item. If your result is equal to or less than than the cost, choose one: 
+- The item isn't quite what you wanted; the GM will tell you how. Maybe that railgun is stolen, and now the previous owner is after you too. Maybe the guide you hired isn't really much of a guide at all and you get stranded two days into your trek when he decides to pack up quietly at night and go home. 
+- You've gone into debt to purchase it; the GM will tell you what you have to do to pay off the debt.
+- Step your Credit Die down one step (toward d4).
+
+{{note,margin-top:0
+### GM Option: Legality
+Some items might be restricted to military use or completely illegal in certain locales. The legality of weapons might be different in an agrarian complex than it would be in a neocorp security orbital.
+- If an item is Restricted, step up the cost die or add +2 to the cost.
+- If an item is Illegal, make the Purchase Throw Difficult.
+}}
+
+## Selling
+To sell an item, make a Throw using your CD. If your result is greater than the cost, nothing changes. If your result is equal to or less than than the cost, step up your CD once.
+
+{{note
+### GM Option: HAGGLING
+It is not uncommon for a player to want to haggle with a merchant over the cost of an item. If they roleplay the encounter well, or -- if you allow it -- succeed at a Influence Throw, their Purchase Throw is Easy. If they fail either however, their Purchase Throw is Difficult.
+}}
+
+## Price Lists
+The following lists aren't exhaustive; they're meant to give the GM points of reference. Prices for assistance includes any gear and provisions needed.
+
+{{note
+### Miscellaneous Items
+Items are only important when they're important. Players shouldn't need to make a check for every meal. Costs are provided for those times when the explorers need to get into a specific establishment for some plot-related event.
+}}
+
+{{pageNumber,auto}}
+
+\page
+
+## Weapons Tech
+Pre-Fall technology was impressive both by real-life modern standards and post-Fall standards. They had mastered fundamental physics and begun to tinker with forces probably better left alone. Below are some ideas for weapons, but they need not be the *only* ideas. As long as you and your GM agree on the amount of damage and type of damage that a weapon deals, that's all you need.
+
+Melee weapons have stayed much the same, with the biggest advancement coming in the form of stronger, more durable, lighter materials like carbon nanotubes, metallic glass, and quantum-lattice alloys. These materials are also used in making armor, along with para-aramids and ceramic-steel, as well as more exotic materials such as biophasic, nanoweave, and monocrystal materials.
+
+\column
+
+The simplest ranged weapons still fire physical projectiles; these are known as kinetic weapons. They range in power from ancient firearms that use an explosion to push a bullet to electromagnetic railguns that fire metal bolts at supersonic speeds.
+
+Beyond these, there are laser, plasma, or microwave weapons that damage with heat; rifles that fire microscopic payloads of antimatter that annihilate targets, devices that emit resonant electromagnetic waves to shatter molecular bonds; cryonic weapons that slow and freeze targets; and particle projector cannons that fire relativistic particle beams that induce internal thermal shock and secondary radiation bursts.
+
+{{wide
+###### WEAPONS
+Type    |Dmg  |Rarity|Description
+:-------|:---:|:----:|:----------
+Crude   |d6   |C     |Melee, fashioned from debris or scrap, one or two-handed. They have Ud10 durability.
+Light   |d4   |C     |Melee or ranged and one-handed. Ranged weapons require ammunition or power, and usually deal kinetic, fire, or electric damage.
+Heavy   |d6   |U     |Melee or ranged and two-handed. Ranged weapons require ammunition or power, and usually deal kinetic, fire, or electric damage.
+Quality |d8   |R     |Quality weapons are usually pre-fall or experimental, either ranged or melee, and designed to be held in one hand. Ranged weapons require ammunition or power and deal any type of damage but psionics.
+Military|d10  |Q     |Military weapons are nearly impossible to come by as they're horded away by authorities or lost during the fall. They are either melee or ranged weapons designed to be held in one hand. Ranged weapons require ammunition or power.
+}}
+
+{{pageNumber,auto}}
+
+\page
+
+## Armor Tech
+Defensive technology advanced alongside weapon technology. The simplest armor consists of scavenged scrap or integrated plate systems that rely on mass and structural reinforcement for protection. More sophisticated suits employ para-aramids and ceramic-steel composites that disperse impacts and shatter incoming projectiles.
+
+Advanced armor incorporates exotic materials such as self-repairing biophasic structures, ultra-strong nanoweaves woven from molecular-scale fibers, and monocrystal components grown as single continuous crystals. These materials provide exceptional protection while remaining lighter and more flexible than conventional armor.
+
+\column
+
+The most advanced defenses are active systems rather than passive materials. Fusion-powered armor operates electromagnetic countermeasures and adaptive protection systems. Force armor uses directed fields and confined plasma to weaken or deflect incoming attacks before impact. Singularity armor manipulates gravity, spacetime, or blinkgate-derived micro-wormhole technologies to redirect, absorb, or disperse attacks entirely.
+
+Shields employ many of the same principles. Physical shields rely on advanced materials and structural design, while energy shields use electromagnetic fields, plasma barriers, gravitic distortions, or related technologies to intercept attacks before they reach the user.
+
+{{wide
+:::
+###### Armor
+Type            |AV   |Rarity|WEAPONS
+:---------------|:---:|:----:|:---|
+Crude           |1    |C     |Crude armor is scrap or other unmatches pieces; it generally protects only against kinetic damage.
+Light           |1d3+1|U     |Light armor is actual armor, but it isn't fancy, It'll protect against kinetic damage and maybe one other type, like Fire, Cold, or Acid.
+Quality         |1d3+2|R     |Quality armor protects against kinetic damage a couple other types, but it cannot protect against Force or Psionic.
+Military        |1d3+3|Q     |Military armor is high-grade protection against almost everything by Psionic.
+Shield, Physical|1d2  |U     |physical shield protects against kinetic damage as long as you have a hand free to hold it.
+Shield, Energy  |1d2+1|R     |An energy shield protects against everything but kinetic and psionic damage as long as you have a hand free to hold it.
+}}
+
+{{pageNumber,auto}}
+
+\page
+
+## Vehicles
+Antigrav is available on some more sophisticated models; otherwise assume tech that's available now or slightly in advance is what you have to work with. Vehicle defenses rely on the same tech as armor does, and you can purchase armor for your vehicle in much the same manner you can purchase it for yourself.
+
+As long as your explanation for what they do is approved by the GM, you're good to go.
+
+##### Vehicle Defenses
+Vehicles have two defense ratings. Block defends against melee attacks; Dodge defends against ranged attacks. The driver or operator makes the Throw.
+
+\column
+
+## Drones
+Drones work much the same as they do today, but with more advanced onboard systems that work exactly the way that scifi depicts AI working in the future. Not typically truly sentient.
+
+Drones use the same weapon tech as is available for your personal weapons, and ythey can be retrofited, subject to GM approval.
+
+Not all drones are mechanical. The term is a catch-all for anything that helps you, robot, cyborg, bio-engineered, or plain old bred for work animals.
+
+{{wide
+::
+###### Vehicles
+Item|Description|Rarity
+:---|:---|:---|
+Cargo Hauler|Slow, can haul most items that aren't tied down, 1d12 HP, Dodge 6, Block 12|Common
+Speeder|Fast, but can't hold much, 1d6 HP, Dodge 12, Block 6|Uncommon
+:
+###### Drones
+Item|Description|Rarity
+:---|:---|:---|
+Drone*|Civilian Walker: 1d10 HP, Melee 12, 1d6 damage|Common
+^|Military Walker: 2d6 HP, Melee 14, 1d6 damage|Uncommon
+^|Civilian Flyer: 1d4 HP Ranged 14, 1d4 damage|Uncommon
+^|Military Flyer: 2d4 HP, Armor 2, Ranged 16, 1d6 damage|Rare
+&ast; It is possible to find animals that can be used as well. Depending on your location, this may affect the rarity.|||
+}}
+
+{{pageNumber,auto}}
+
+\page
+
+## Services
+Tech has changed; people haven't. People going to unfamiliar areas still need guides, travellers still need someplace to sleep, hungry people still need food, and it all still comes at a price. Usually legality isn't attached to these items; if it is, that should tell you a lot about the kind of place you're in.
+
+\column
+
+{{note
+### Other Items
+If it's not listed here, it doesn't have defined stats. There's too many things in the world to either catalog all of them or to list rules for them all. It is up to the player to find uses for the items their Explorer carries. 
+}}
+
+{{wide
+::
+###### Room & Board
+Item|Description|Rarity
+:---|:--70%-|:---|
+A Week's Rooming|shared sleeping space|Common
+^|single room|Uncommon
+^|private dwelling|Rare
+Food|synthesized food: *3D-printed meat, vegetable paste*|Common
+^|alcohol|Common
+^|vat-grown food: *mycoprotein steaks, lichen ale*|Uncommon
+^|naturally-grown: *fungus-fed ribeye, greywater broccoli*|Rare
+:
+###### Assistance
+Item|Description|Rarity
+:---|:---|:---|
+Guide|Will take you to a place of your choosing, won't fight for you. HP 1d10|Common|
+Mercenary|Might know how to get to a few known places he knows personally, will fight for you. The GM will create his Attributes. HP 2d6, 1d4 damage.|Common|
+Expert|Has expertise in one local area of knowledge, makes all Throws related to that area of expertise Easy. Won't fight for you. HP 1d6|Uncommon
+}}
+
+{{pageNumber,auto}}
+
+\page
+
+# Psionics
+At first, it was just those who got 'lost' in the blinkgates that gained psionic ability. But as more gates began opening up across the system, more people are gaining these new powers. These people are referred to as **Awakened**. You have the option to Awaken when creating your character, when gaining a new level, and whenever the GM feels it's appropriate.
+
+To **Awaken** your character, follow these steps:
+1. Choose a downside. Lose your choice of 1d3 Fitness, Discipline, Instinct, or HP. If you reduce your HP, you make this reduction **after** determining your HP at each level. *If this reduces your HP or an Attribute to 0, you are dead. Make a new character.*
+2. If this is your first awakening, roll for both a Form and a Source on the *Power Words* table. If not, roll for either a Form or a Source.
+3. Be sure to check to see if any skills have been affected by your attribute changes.
+
+## Manifesting
+To manifest a power, choose a Form and a Source that you know, describe the effect that this combination of words creates, and then make a **Cognition** Throw. If your Throw is less than your Cognition and greater than your target's Toughness (if there is one) you succeed and the effect you described happens immediately and then fades.
+
+\column
+
+###### Power Words
+1d20|Form      |Source
+:--:|:---------|:---
+1   |Absorb    |Acid
+2   |Flicker   |Void
+3   |Redirect  |Air
+4   |Amplify   |Stone
+5   |Scatter   |Metal
+6   |Explode   |Plant
+7   |Anchor    |Flesh
+8   |Free      |Mind
+9   |Shift     |Gravity
+10  |Breach    |Machine
+11  |Distort   |Cold
+12  |Protect   |Light
+13  |Conceal   |Water
+14  |Project   |Dark
+15  |Destroy   |Electricity
+16  |Condense  |Language
+17  |Reveal    |Radiation
+18  |Stabilize |Fire
+19  |Delay     |Sound
+20  |Lose 1 more of whatever aspect you chose as your downside, then roll twice.||
+
+{{pageNumber,auto}}
+
+\page
+
+##### Power Limits
+Manifesting a power quickly puts a few limits on what you can do.
+- The power can target one In Reach enemy, ally, or object. 
+- If your power has an area of effect (e.g. darkness, or a shield) it covers 5 cubic meters, or is 5 meters long.
+- If your power deals damage, it deals 1d6.
+- If your power heals. it heals 1d6.
+- Any effect ends after 1 round.  
+
+##### Damage Type
+If a combination of Words suggests an specific type of damage then your Power deals that type of damage. For instance Fire Barrier could deal Fire damage is someone stepped into it.
+
+##### Unusual EFfects
+If the GM feels that any specific combination of Source and Form can't have the effect you're attempting, make the roll with Difficulty. If it still succeeds, it's worked this one time, but will never work again.
+
+##### Power Failure
+When your Congnition Throw is equal to or less than the target's Toughness, your power fails, but it's less because you did something wrong so much as the target resisted it.
+
+When your Cognition Throw is greater than your Cognition, there's a Backlash. Roll 1d6 per Backlash you've had since you last had a full rest, and find the result on the *Backlash* table on the next page.
+
+\column
+
+### Extended Powers
+If you spend at least one minute manifesting your powers without interruption, the effect you describe can persist up to 10 minutes. If you spend one hour, the effect can last up to a day. You can't extend damage effects.
+
+Alternately, if you wish, you can set a triggering action inside the effect's persistance time. Whatever immediate effect you describe happens when  the triggering action occurs before time runs out. You *can* trigger damage effects.
+
+## RISK
+You may also take on Risk to amplify your powers. Risk works in the same manner as Toughness, and stacks with any Toughness already imposed upon the Throw.
+
+###### MODIFICATION & RISK
+RISK	|EFFECT
+:---:|:---
+1	|Add one additional target.
+1	|Add +1 square meters to the size of the affected area.
+2	|+1d6 damage or healing to one target.
+2	|Change In Reach to Close.
+4	|Change In Reach to In Range.
+
+{{pageNumber,auto}}
+
+\page
+
+{{wide
+###### Backlash
+ROLL	|EFFECT
+:---:|:---
+1	|Roll 1d20 to randomize the Source of the Power. You remember the new Word.
+2	|Roll 1d20 to randomize the Form of the Power. You don't remember the new Word.
+3	|Roll 1d20 to randomize the Source of the Power. The Power targets a random Creature. You don't remember the new Word.
+4	|You manifest a second Power in addition to the first. Roll 1d20 twice to randomize both the Source of the Form of the new Power. It targets a random Creature. Both Powers manifest successfully.
+5	|Take 1d6 damage. If you take 4 or more damage, forget the Form from your Power. Roll 1d20 for a new Form to learn in its place.
+6	|Take 1d6 damage. Forget the Source of your Power. Roll 1d20 for a new Source to learn in its place.
+7	|Take 1d6 damage. Your Power manifests successfully.
+8	|Take 1d6 damage. If you take 4 or more damage, your Power fails. If you take 3 or less damage, your Power manifests successfully.
+9	|Your Power has the opposite effect.
+10	|Two Orison of your level appear and attack everyone.
+11	|Lose 1d3 Fitness permanently.
+12	|Lose 1d3 Discipline permanently.
+13	|Lose 1d3 Instinct permanently.
+14	|Roll twice and apply both effects. This result stacks.
+15+	|Your Ritual works as intended, but you permanently lose the ability to use those Words.
+}}
+
+{{pageNumber,auto}}
+
+\page
+
+
+# GM Tools
+
+## Turns
+The GM should use these steps to create a Turn
+structure and run the game; they work
+regardless of where the Explorers are
+or what they are doing.
+1. Quickly recap the last Turn?s Actions.
+2. Make any time sensitive Usage Throws as well.
+3. Figure out who can act right now, rolling Sequence if combat is
+involved. Ask those players ?What
+do you want to do for the next few
+seconds/minutes/etc.?? Then narrate
+those Actions and the outcomes of
+any Attribute Tests you call for.
+4. Narrate the Actions of NPCs and the
+environment around the players.
+5. Make sure everyone has acted who is
+able, make a Random Encounter Roll
+(p.19) if necessary.
+6. Go to Step 1 and repeat.
+
+Not every explorer (or player) is going to be equally interested in every scene. It's fine if they have nothing to add. Just make sure to provide spotlight for that explorer later.
+{note}
+
+
+\column
+
+## REACTIONS
+Some Creatures will have
+predetermined personalities and goals
+that will guide a GM when choosing
+their Actions and feelings towards the
+explorers. For those that do not, the GM
+may roll 2d6 on the Reactions table.
+
+###### Reactions
+|2d6|Reaction|
+|:---:|:---|
+2|Surrender/offer allegiance
+3| Give PCs an item/info/aid
+4| A mutually beneficial trade
+5| Mistake the PCs for allies
+6| Wait for the PCs to act first
+7| Withdraw to a safer location
+8| Demand the PCs withdraw -- if they don?t add 1d6 to this result
+9 |Call for 1d6 reinforcements -- then see result 6 on this table
+10| Trick the PCs using result 2-4 (roll again for true intentions)
+11 |Capture the PCs
+12+ |Kill/eat the PCs
+
+{{pageNumber,auto}}
+
+\page
+
+## ENCOUNTERS
+An Encounter could be anything
+from a Distant, suspenseful noise to a
+nearby deadly Monster. They serve two
+major purposes; firstly, they ensure that
+the ?game? will always offer unexpected
+situations for the Players to tackle.
+Secondly, they reinforce the fact that the
+world the explorers belong to exists
+beyond their own Actions in it.
+
+### ENCOUNTER ROLL
+The GM should make a secret Encounter
+Throw (1d6 on the table below) when the
+explorers linger in one place or perform
+Actions that would reveal themselves.
+
+###### Encounter Throw
+|1d6|Encounter|
+|:---:|:---|
+1| Introduce a **Creature** to encounter.
+2| Introduce signs of *Nearby life* (see table).
+3| Introduce signs of *Distant life* (see table).
+4| Reduce a device?s Consumable Die 1 step.
+5| A randomly determined Explorer is overcome with stress and their next Throw is Difficult.
+6 |All Explorers must consume food and water or lose HP equal to their Level through fatigue.
+
+\column
+
+###### NEARBY LIFE
+|1d6|Sign|
+|:---:|:---|
+1| Bloody, still wet footprints
+2| Still warm abandoned camp
+3| Irregular approaching footsteps
+4| Rancid smell of body odour
+5| Knocking from a closed door
+6| Nearby yelp of pain
+
+###### Distant LIFE
+|1d6|Sign|
+|:---:|:---|
+1| Quiet shouts and fighting
+2| Delicate wisps of black smoke
+3| Echoing bangs and clanking
+4| Quiet scratchy music
+5| Faint smell of something burning
+6| Low muffled sounds of talking
+
+{{pageNumber,auto}}
+
+\page
+
+# Sol System
+
+{{note
+This list contains only locations from the mind of the writer, but the Sol system is vast, and there's a lot of blank spaces that can be filled in. Don't feel constrained by these locations if you have ideas of your own.
+}}
+
+## Mercury
+Distance from Sol: ::58.3Mkm (0.39 AU)
+Temperature: ::-30&deg;C to 220&deg;C
+Gravity: ::0.38G
+Atmosphere: ::None
+
+##### Terminator City
+Population: ::2,250
+At one time, Mercury was viewed as the 'Forge of the Future', and the massive Mercury Terminator Crawler was built to pull the planet's riches from its crust after Earth's easy-to-reach resources were mostly depeted. The one-kilometer long crawler was originally designed for five thousand, but once worlds were discovered through the bliunkgate, full of untouches minerals, it was abandoned, its nuclear reactors continuing to fuel its crawl just ahead of Mercury's nightside.  
+
+After the fall, and the loss of civilization that accompanied it, the crawler was repopulated by religious refugees from the House of the Sun, though not to its fullest extent. Over half of the city-sized machine still sits empty. 
+
+
+\column
+
+## Venus
+Distance from Sol: ::107.7Mkm (0.72 AU)
+Temperature: ::150&deg;C to 220&deg;C
+Gravity: ::0.9G
+Atmosphere: ::Carbon dioxide with small amounts of nitrogen and oxygen.
+
+Venus was once supposed to become a second Earth. Engineers fought a long, losing battle against a planet that never offered any compromise. Entire fortunes were invested in schemes to cool the atmosphere and reclaim the surface. They all failed.
+
+The collapse of the terraforming program forced humanity to abandon the ground, but they did not abandon Venus entirely. Fifty kilometers above the ground, pressure and temperature were already comparable to those of Earth.
+
+The cloud cities were built around immense toruses that served as both habitat and lift. Scale was the new engineering challenge. Even the smaller settlements required a torus measured in kilometers, its fluoropolymer skin holding a volume of air the size of a Terran city.
+
+There was never a true government of Venus. Mining concerns, investment syndicates, religious communities, and ambitious visionaries founded aerostats of their own, each designed according to its creator's needs and resources. Some were compact settlements intended for a few thousand residents. Others grew into floating nations whose ringworks dominated the horizon.
+
+{{pageNumber,auto}}
+
+\page
+
+Every aerostat followed its own drift pattern through the high-altitude winds. Some traveled in loose trading fleets. Others preferred isolation, spending months without seeing another city.
+
+The Fall changed little about that arrangement. Most cities had always been responsible for their own maintenance, produced much of their own food, and governed themselves without outside interference. Trade became less reliable and spare parts harder to obtain, but Venusians had always depended on themselves for survival. 
+
+##### Aerostat Seven
+Population: ::70,000
+Diameter: ::24 km
+
+Aerostat Seven was built during the final years of the Venus Terraforming Initiative, when its founders still expected the floating settlements to become temporary waystations above a habitable world. Instead, the city outlived the project. Seven's scale was unprecedented among the early aerostats. Its immense ring encloses a sheltered central expanse lined with residential terraces, public plazas, transit hubs, and docking facilities. A resident can travel for hours without leaving the city.
+
+Control of Aerostat Seven passed through dozens of hands over the centuries. Corporate ownership dissolved into district councils, neighborhood charters, and hereditary trusts, none powerful enough to dominate the whole structure. The city remains technically unified, but most residents identify first with their district and only second with Seven itself. Entire sections of the ring stand unused, maintained by caretakers who preserve infrastructure built for a future population that never arrived.
+
+##### Greenhaven
+Population: ::33,000
+Diameter: ::19 km
+
+Greenhaven was founded by agricultural investors who recognized a simple reality of Venusian engineering: the volume required to keep a city aloft far exceeded the volume needed to house its residents. Rather than leave most of that space empty, they devoted much of the ring to food production. Orchards, terraced gardens, aquaculture tanks, grain vaults, and seed repositories occupy large portions of the structure, with residential districts woven between them.
+
+The city's economy never depended on a single customer or distant government, which allowed it to weather the Fall with relatively little disruption. Merchant ships still travel considerable distances to purchase Greenhaven produce and establish supply contracts. Over time, the city became the center of a loose commercial network whose members frequently share weather data, shipping schedules, and mutual aid agreements while otherwise remaining independent.
+
+##### Saint Brigid's Lantern
+Population: ::8,000
+Diameter: ::12 km
+
+Saint Brigid's Lantern began as a remote atmospheric observatory established far from the major settlement orbits. Following the Fall, it become the home of a small by the Fellowship of the Sacred Horizon, a small religious movement that taught that humanity's purpose was not to shape the universe, but to witness it. To the Fellowship, Venus's endless cloudscape was a reminder that man's supposed control over the physical world was an illusion.
+
+{{pageNumber,auto}}
+
+\page
+
+The Fellowship gradually transformed the observatory into a permanent settlement. Pilgrims arrive from across the Solar System, though few remain for long. Life aboard the Lantern is quiet, deliberate, and governed more by tradition than law.
+
+The city has little interest in the affairs of its neighbors. Merchant vessels are welcomed and travelers are offered hospitality, but the Fellowship teaches that the Sacred Horizon reveals itself differently to every soul, making conversion both impossible and unnecessary. As a result, Saint Brigid's Lantern has spent centuries drifting through the Venusian skies in near isolation, observing the world rather than influencing it.
+
+## Terra
+149.6Mkm (1.00 AU) from Sol. Environment drastically altered by environmental neglect and large-scale world war. Temperatures range from -120&deg;C to 70&deg;C. Gravity is, of course, Terran normal.
+
+Planetary Outpost
+Population: ::750
+
+#### Luna
+Orbits Terra at 384.4kkm. Partially terraformed, mostly failed after the war. Temperatures range from 5&deg;C to 40&deg;C. Gravity is 17% of Terran normal.
+
+Populated Moon
+
+## Mars
+227.4Mkm (1.52 AU) from Sol. Mars is partially terraformed. Temperatures range from -110&deg;C to 25&deg;C. Gravity is 38% of Terran normal.
+
+Populated Planet
+
+##### Lotus Tower
+Population: ::66,200
+Originally built during Mars' early terraforming stage as part of Lotus CIty, its districts were connected by an immense network of underground passageways that carried people, freight, and utilities beneath the city. When the project failed, the settlement was left empty.
+
+Following the Fall, refugees from Earth poured into the city. Over the decades that followed, Lotus City grew into one of the largest population centers in human history. Nearly half a billion people eventually lived there.
+
+But Lotus City became a microcosm of the unrest on Terra, and a nuclear weapon was detonated in the heart of the city. Of the hundreds of thousands of structures that once made up Lotus City, only Lotus Tower remained standing.
+
+A century later, the city is mostly ruins, but its inhabitants refuse to leave, or perhaps cannot. Some residents were fortunate enough to find rooms within the Tower itself, but most live among the surrounding tunnels and sublevels, constructing homes in whatever spaces can be salvaged.
+
+The Tower's Manager and Directors still nominally hold power and do what they can, but increasingly find themselves at odds with both the local crime syndicates and the growing influence of the Universal Church of the Orison.
+
+{{pageNumber,auto}}
+
+\page
+
+## Asteroid Belt
+
+#### Vesta
+Approximately 525km long with a gravity of 2.6% of Terran normal.
+
+Deep Space Station
+Population: ::11,000
+Built as a luxury vacation habitat before the fall, 
+
+#### Pallas
+Approximately 512km long with a gravity of 2.1% of Terran normal.
+
+Deep Space Station
+Population: ::9,000
+This is a former research station,
+
+#### Hygiea
+Approximately 434km long with a gravity of 1.3% of Terran normal.
+
+Deep Space Station
+Population: ::3,000
+Once a major slowship yard,
+
+#### Interamnia
+Approximately 332km long with a gravity of 0.9% of Terran normal.
+
+Deep Space Station
+Population: ::8,000
+Once the home of the megacorp known as XXXXXX,
+
+\column
+
+#### Davida
+Approximately 298km long with a gravity of 0.8% of Terran normal.
+
+Deep Space Station
+Population: ::19,000
+Once a major trade inter-system trade hub, it had one of the largest blinkgates ever built,
+
+#### Eunomia
+Approximately 270km long with a gravity of 1.1% of Terran normal.
+
+Deep Space Station
+Population: ::13,000
+Once the home of the megacorp known as XXXXXX,
+
+#### Juno
+Approximately 254km long with a gravity of 1.1% of Terran normal.
+
+Deep Space Station
+Population: ::7,000
+This formner military base 
+
+## Jupiter
+777.9Mkm (5.20 AU) from Sol. Gas giant. No solid surface. Atmosphere consists primarily of hydrogen and helium. Circled by a system of 4 ring(s).
+
+#### Io
+Orbits Jupiter at 422kkm. Temperatures range from &deg;C to &deg;C. Gravity is 18% of Terran normal.
+
+Lunar Outpost
+Population: ::2,500
+
+{{pageNumber,auto}}
+
+\page
+
+#### Europa
+Orbits Jupiter at 671kkm. Temperatures range from -220&deg;C to -160&deg;C. Gravity is 13% of Terran normal.
+
+Lunar Outpost
+Population: ::2,500
+
+#### Ganymede
+Orbits Jupiter at 1,070kkm. Terraforming failed. Temperatures range from -184&deg;C to -113&deg;C. Gravity is 15% of Terran normal.
+
+Lunar Colony
+
+#### Callisto
+Orbits Jupiter at 1,883kkm. Terraformed. Temperatures range from -5&deg;C to 20&deg;C. Gravity is 13% of Terran normal.
+
+Populated Moon
+
+## Saturn
+1,433.1Mkm (9.58 AU) from Sol. Gas giant. No solid surface. Atmosphere consists primarily of hydrogen and helium. Circled by a system of 7 ring(s).
+
+#### Tethys
+Orbits Saturn at 295kkm. Temperature approximately -190&deg;C. Gravity is 2% of Terran normal.
+
+Lunar Outpost
+Population: ::4,500
+
+\column
+
+#### Dione
+Orbits Saturn at 377kkm. Temperature approximately -180&deg;C. Gravity is 2% of Terran normal.
+
+Lunar Outpost
+Population: ::2,500
+
+#### Rhea
+Orbits Saturn at 527kkm. Temperatures range from -220&deg;C to -174&deg;C. Gravity is 3% of Terran normal.
+
+Lunar Outpost
+Population: ::2,250
+
+#### Titan
+Orbits Saturn at 1,222kkm. Terraformed. Temperatures range from -10&deg;C to 25&deg;C. Gravity is 14% of Terran normal.
+
+Populated Moon
+
+#### Iapetus
+Orbits Saturn at 3,561kkm. Temperatures range from -203&deg;C to -113&deg;C. Gravity is 2% of Terran normal.
+
+Lunar Outpost
+Population: ::3,750
+
+{{pageNumber,auto}}
+
+\page
+
+## Uranus
+2,870.8Mkm (19.19 AU) from Sol. Ice giant. No meaningful solid surface. Atmosphere consists primarily of hydrogen and helium. Circled by a system of 13 ring(s).
+
+#### Ariel
+Orbits Uranus at 191kkm. Temperature approximately -200&deg;C. Gravity is 3% of Terran normal.
+
+Lunar Outpost
+Population: ::2,250
+
+#### Umbriel
+Orbits Uranus at 266kkm. Temperature approximately -200&deg;C. Gravity is 4% of Terran normal.
+
+Lunar Outpost
+Population: ::2,500
+
+#### Titania
+Orbits Uranus at 436kkm. Temperature approximately -200&deg;C. Gravity is 4% of Terran normal.
+
+Lunar Outpost
+Population: ::1,750
+
+#### Oberon
+Orbits Uranus at 584kkm. Temperature approximately -200&deg;C. Gravity is 4% of Terran normal.
+
+Lunar Outpost
+Population: ::1,500
+
+\column
+
+## Neptune
+4,498.4Mkm (30.07 AU) from Sol. Ice giant. No meaningful solid surface. Atmosphere consists primarily of hydrogen and helium. Circled by a system of 5 ring(s).
+
+#### Triton
+Orbits Neptune at 355kkm. Temperature approximately -235&deg;C. Gravity is 8% of Terran normal.
+
+Lunar Outpost
+Population: ::1,750
+
+## Dwarf Planets
+
+#### Ceres
+414.4Mkm (2.77 AU) from Sol. Cannot capture atmosphere. Gravity is approximately 3% of Terran normal.
+
+Planetary Outpost
+Population: ::1,750
+
+#### Orcus
+5,862.7Mkm (39.19 AU) from Sol. Cannot capture atmosphere. Gravity is approximately 2% of Terran normal.
+
+Planetary Outpost
+Population: ::4,000
+
+#### Pluto
+5,906.1Mkm (39.48 AU) from Sol. Cannot capture atmosphere. Gravity is approximately 6% of Terran normal.
+
+Planetary Outpost
+Population: ::2,000
+
+{{pageNumber,auto}}
+
+\page
+
+#### Makemake
+6,849.9Mkm (45.79 AU) from Sol. Cannot capture atmosphere. Gravity is approximately 4% of Terran normal.
+
+Planetary Outpost
+Population: ::1,250
+
+#### Eris
+10,127.8Mkm (67.7 AU) from Sol. Cannot capture atmosphere. Gravity is approximately 8% of Terran normal.
+
+Planetary Outpost
+Population: ::3,250
+
+{{pageNumber,auto}}
+
+\page
+
+# Threat Index
+
+## Creation
+Every monster has a few **Basics**, a **Role**, **Abilities**, and maybe a couple **Tweaks**. Follow the steps below to create new monsters.
+
+### Basics
+First, decide how powerful your threat needs to be, and what the first and last levels that your players will encounter it. If it's a small range, say, levels 3 to 5, you can make a single threat in the middle of that range (level 4) and tweak it adjust it's level when needed. For a longer range of levels, you may want to make one version for each tier that your players will meet the threat.
+
+You'll also want to decide the threat's size: minion, normal, or elite.
+Minion: ::It comes at you in swarms or waves. Minions overpower explorers by means of shear numbers.
+Normal: ::A threat that's somewhere beetween the size of large dog and a horse. They're usually dangerous, but can be somewhat fought one-on-one.
+Elite: ::Elites are threats that take more than one explorer to handle, even all of them at once!
+
+Once you've decided on the Threat's level and size, note down the baseline stats below.
+
+{{wide
+::
+###### Threat Level & Damage
+|Tier|Explorer Levels|Damage by Type|||
+| ^| ^|Minion|Normal|Elite|
+|:--20%-:|:--20%-:|:--20%-:|:--20%-:|:--20%-:|
+|Explorer|1-4|1d4|1d6|1d8|
+|Champion|5-7| ^|1d8|1d10|
+|Epic|8-10|1d6|1d10|1d12|
+|Cosmic|11-13| ^|1d12|2d8|
+
+###### Monster HP
+|Minion|Normal|Elite|
+|:--33%-:|:--33%-:|:--33%-:|
+|1d6 per level|1d10 per level|1d12 per level|
+}}
+
+{{pageNumber,auto}}
+
+\page
+
+### Roles
+Every threat has a role and has attacks that complement that role. Choose one from the options below, and create the listed attacks. These are just suggestions, so feel free to modify the listed attacks if you wish. When a role calls for an attack, use the listing on the ***Threat Level & Damage*** table on the previous page.
+
+{{note
+### Minions
+If your threat is a Minion, that's also its role. Give it one melee or ranged attack, and one attack that works once for every three or four minions there are.
+}}
+
+#### Artillery
+The Artillery's main attack should be ranged. Give it a second attack that triggers if the first attack hits (or misses, or rolls a certain range of numbers). These attacks can be Area attacks.
+
+After rolling for a Artillery's HP, divide the result by four and subtract this new result from the original (*e.g. If you roll a HP of 12, you would subtract 3 for a total of 9 HP.*)
+
+Artillery raises the size of their damage die by one, so if a normal monster of their level would deal, for instance, 1d8, the artillery would deal 1d10.
+
+\column
+
+{{note
+### Area Attacks
+An area attack targets multiple enemies at once, but lowers the damage the attack deals per target as seen on the Area Attack Damage Table on the next page.
+}}
+
+#### Blocker
+Blockers are meant to be in the way, so just give them one melee attack.
+
+After rolling for a Blocker's HP, divide the result by four and add this new result to the original (*e.g. If you roll a HP of 12, you would add 3 for a total of 15 HP.*)
+
+Blockers lower the size of their damage die by one, so if a normal monster of their level would deal, for instance, 1d8, the blocker would deal 1d6.
+
+#### Leader
+Leaders usually don't like to be in the middle of the fray, so their main attack should usually be ranged.
+
+Then, choose a second ability based on the following suggestions. If you don't like these specificially, make up one that is similar in power.
+- Heal an ally equal to the leader's damage die.
+- Melee and Ranged Throws against one ally are made with Difficulty.
+- Block and Dodge Throws against one ally are made with Difficulty.
+
+{{pageNumber,auto}}
+
+\page
+
+{{wide
+###### Area Attack Damage
+|Original Damage|Number of Targets|||
+| ^|1d3|1d4|1d6|
+|:---:|:---:|:---:|:---:|
+1d12|1d10|1d8|1d6
+1d10|1d8 |1d6|1d4
+1d8 |1d6 |1d4|1d3
+1d6 |1d4 |1d3|2
+1d4 |1d3 |2  |1
+}}
+
+#### Spoiler
+Spoilers are here to be dangerous. Give them two attacks. The first should be ranged, to ensure they're always relevent to the battle. The second should be a melee attack or an attack that hinders the explorers:
+- If the player fails a Grit throw, give them a negative physical effect (*e.g. knock down, can't move, loses HP per tier*), save ends.
+- If the player fails a Will throw, give them a negative mental effect (*e.g. confused, can't attack*), save ends.
+
+Then, give it a power that happens when the spoiler hits a hindered enemy. For instance, it ccould deal an extra damage die, lower the target's damage, or slow the target down.
+
+\column
+
+#### Wrecker
+The wrecker likes to hurt everything at once. It's main attack can be either melee or ranged, but it's an Area attack (e.g. one group, 1d3 enemies, all adjacent enemies). Give it a second attack that triggers the same way an artillery's second attack does (hit, miss, number array).
+
+It should also gain an attack that it can use once or twice a battle.
+
+After rolling for a Wrecker's HP, divide the result by four and add this new result to the original (*e.g. If you roll a HP of 12, you would add 3 for a total of 15 HP.*)
+
+{{pageNumber,auto}}
+
+\page
+
+{{wide
+### Abilities
+Choose the descriptor that best suits your threat. Each descriptor has four Abilities. Choose one Ability per Tier.
+ 
+|Careful ||
+|--20%-|--80%-|
+|**Support**|On a target's Defernse Throw of 11+, heal one ally for 2 HP per Tier.|
+|**Inevitable**|On a miss, the next target the threat attacks must make a Difficult Defense Throw.|
+|**Precise**|On a miss, the target deals half damage, save ends.|
+|**Retreat**|On a miss, the threat can automatically disengage.|
+|**Cruel**|Enemies at less than half HP make Difficult Defense Throws vs. this threat.|
+|**Edge**|The threat makes Easy Damage Throws vs. enemies at less than half HP.|
+
+|Chaotic ||
+|--20%-|--80%-|
+|**Bleed**|On a hit, deal ongoing damage equal to half the monster's normal damage, save ends.|
+|**Daze**|On a hit, the target can only either move or act, save ends.|
+|**Graze**|On a miss, deal half damage.|
+|**Vicious**|On a Defense Throw of 11-15, the monster deals damage to itself for 25% of its normal damage. If the Defense Throw fails, the target takes the damage too.|
+}}
+
+\page
+ 
+{{wide
+|Intimidating ||
+|--20%-|--80%-|
+|**Confusion**|On a hit, the target uses its next turn to make an attack of the GMs choice against an ally of the GMs choice.|
+|**Dangerous**|On a miss, the next attack deals damage as if the monster were one tier higher.|
+|**Kryptonian**|When an enemy Engages the threat, the enemy must make a Grit Saving Throw. If it fails, the threat may make an immediate free attack using its primary attack.|
+|**Sundering**|On a hit, the target makes Difficult Defense Throws, save ends.|
+|**Unshaken**|When an enemy makes a Defense Throw of 16+, the threat may make an Easy Save against any status effect.|
+|**Terror**|When the threat drops an enemy to 0 HP, all enemies make Difficult Attack Throws until the threat's next turn.|
+
+|Powerful ||
+|--20%-|--80%-|
+|**Mighty**|On a hit, the monster gains bonus damage to its next attack equal to half of this attack's damage.|
+|**Knockback**|On a failed Defense Throw, the enemy pops free from the monster.|
+|**Stuck**|On a hit, the enemy cannot move. If the threat grabs the enemy, the threat can move the enemy with it, Grit save negates. If the threat is Elite or of a higher tier, the Grit save is Difficult.|
+|**Wide**|On a hit, damage a nearby enemy for half of this attack's damage.|
+|**Amplify**|If an enemy's Defense Throw is Difficult, a hit adds a new status effect, like ongoing damage, or being knocked down. Save ends.|
+|**Immunity**|The threat is immune to either physical (e.g. being knocked down or slowed) or mental effects (*e.g. confusion*).|
+
+|Quick ||
+|---|---|
+|**Accurate**|On a miss, the monster rerolls the attack with a -2 penalty and takes the better number. At level 5, the penalty is removed. At level 8, the monster gains a +2 bonus to the reroll.|
+|**Agile**|PC's take a -2 penalty to preventing the monster from breaking free.|
+|**Double**|On a hit, attack again. The second attack doesn't generate another attack if it hits.|
+|**Speedy**|On a natural even attack roll, the monster gains a bonus move action.|
+Dodge: ::The threat takes half damage from opportunity attacks.
+
+|Skilfull ||
+|---|---|
+|**Area**|The attack targets 1d3+1 creatures. (Remember to modify damage according to the **Multiple Target Damage** table.)|
+|**Controlling**|On a hit, the target is Hampered.|
+|**Defensive**|On a natural attack roll of 16 or higher, the monster gains a +2 bonus to all defenses against the next attack that targets it.|
+|**Repeating**|On a hit, the monster gains a +2 bonus to its next attack.|
+Illusionist: ::Once per battle, the monster can create duplicates of itself. While it has duplicates, an explorer attacking it must make a Notice Throw to attack the correct target. Once one explorer is successful, the copies vanish.
+Invisible**|The threat can turn invisible once per battle until the end of its next turn, or until it attacks. At 8th level, this increases to twice per battle.|
+}}
+
+{{pageNumber,auto}}
+
+\page
+
+\column
+
+#### Attack
+Redo: ::Once per battle, the threat may force a reroll on a successful Defense Throw against one of its attacks.
+Wounding: ::The first time an enemy is hit by the threat, it spends one HD and doesn't heal accordingly.
+
+\page
+
+###### Defense
+Endure: ::The threat can take damage equal to its level to remove a negative effect.
+Durable: ::The threat ignores damage equal to its level each round.
+Frightening: ::Any enemies with less HP than the threat make Attack Throw against it with Difficulty.
+Resistant**|The threat gains Resist 8 to weapons or one or two damage types. At 6th level this increases to Resist 5.
+Reversal**|The threat may make an attack against an enemy who misses it with a natural 1 or 2.|
+Spiked: ::Any enemy who hits the threat with a melee attack takes 3 damage. This increases to 5 damage at 5th level, to 7 at 8th level, and to 9 at 11th level.
+Terror**||
+
+```
+```
+
+###### Healing
+| |
+|---|---|
+|**Draining**|The monster heals for the damage it inflicts on a critical hit.|
+|**Regen**|The monster heals equal to it's level each round. This increases to twice its level at 5th level, and three times its level at 8th.|
+|**Surge**|The monster gains HP equal to one quarter of its maximum HP the first time it drops to 0 HP.|
+
+###### Leadership
+| |
+|---|---|
+|**Aggressive**|Allies that are near the monster deal an extra 3 damage per level of a specific energy type on a natural even hit.|
+|**Bastion**|The monster can cause a nearby ally to take half damage from an attack by taking the other half of it itself.|
+|**Control**|Allies that are near the monster add a specific status effect to the attack if it hits with a natural 16+|
+|**Reinforce**|The monster summons a monster of a different type. At 5th level, it summons two other monsters, and at 8th level it summons three.|
+|**Training**|Allies that are near the monster reroll natural twos on attack rolls.|
+|**Veteran**|Allies that are near the monster deal half damage on a natural odd defense roll.|
+
+\page
+
+###### Movement
+| |
+|---|---|
+|**Charge**|The monster deals an extra 50% damage when it moves and attacks a new enemy on its turn.|
+|**Disruptive**|Once per battle, the monster can negate the move action of a nearby enemy who has fewer HP than it. This increases to 2/battle at 5th level and 3/battle at 8th.|
+|**Inhuman**|The monster can walk up walls, across water, or otherwise move in a manner that isn't normally possible.|
+|**Interceptor**|Once per round, the monster can move to make an opportunity attack, even if In Reach of another creature. It still needs to make a disengage check.|
+|**Mercurial**|Once per battle, the monster gains an bonus move action on it's turn. At 5th level, this happens twice per battle, and at 8th level, it happens three times per battle.|
+|**Phasing**|As a standard action, the monster can phase itself until the beginning of its next turn. It can reappear anywhere nearby that it could normally reach.|
+|**Teleport**|As a move action, the monster may teleport to any nearby location it can see when the escalation die is even.|
+
+###### Positioning
+| |
+|---|---|
+|**Aura**|At the beginning of the monster's turn, each enemy In Reach takes 4 damage per level.|
+|**Coordination**|The monster gains a +2 bonus to hit for each other group of mooks or non-mook monster that is attacking the same target.|
+|**Phalanx**|The monster gains +2 to AC as long as it is In Reach of the same enemy as at least one ally.|
+|**Savagery**|When the monster is critically hit, it makes a basic attack against each enemy In Reach.|
+|**Wrath**|When the monster drops to 0 HP, it makes a basic attack against each enemy In Reach.|
+
+
+{{pageNumber,auto}}
