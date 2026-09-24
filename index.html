@@ -28,12 +28,12 @@
 
     <script>
         // 1. paste your long random Google Drive file ID between the quotes below:
-        const GOOGLE_FILE_ID = 'PASTE_YOUR_FILE_ID_HERE'; 
+        const GOOGLE_FILE_ID = '1IFSlOtUmVBgS1zxQNA1-nOYuL5EsIaVV'; 
 
         async function loadText() {
             try {
                 // This URL forces Google to export the document as plain text
-                const url = `https://google.com{1IFSlOtUmVBgS1zxQNA1-nOYuL5EsIaVV}&exportFormat=txt`;
+                const url = `https://google.com{GOOGLE_FILE_ID}&exportFormat=txt`;
                 
                 const response = await fetch(url);
                 if (!response.ok) throw new Error('Network response was not ok');
