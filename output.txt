@@ -697,6 +697,7 @@ table+h2, table+h3, table+h4, table+h5 {
 
 
 
+
 ```
 
 # {{font-size:106px!important Ashes}}<br>of sol
@@ -722,7 +723,7 @@ Blake Caparoon
 The name Ashes of Sol and all layout is ? Blake Caparoon 2026
 {wide,text-align:center!important}
 
-Ashes of Sol is inspired in various parts by Into the Odd, Lamentations of the Flame Princess, The Black Hack, and A Dungeon Game, under apprpiate licences.
+Ashes of Sol is inspired in various parts by Into the Odd, Lamentations of the Flame Princess, The Black Hack, and A Dungeon Game, under appropiate licences.
 {wide,text-align:center!important}
 }}
 
@@ -735,7 +736,7 @@ Ashes of Sol is inspired in various parts by Into the Odd, Lamentations of the F
 \page
 
 {{intro
-Humanity's second space age began in the 21st century, driven by the urge to escape an overpopulated and overpolluted Earth. Over the next two centuries, colonies sprung up in almost every available niche. Floating cities hung in the clouds of Venus. Crawlers chased Mercury's terminator. Terraforming was begun on Mars. Millions lived in the asteroid belt.
+Humanity's second space age began in the 21st century, driven by the urge to escape an overpopulated and overpolluted Earth. Over the next two centuries, colonies sprang up in almost every available niche. Floating cities hung in the clouds of Venus. Crawlers chased Mercury's terminator. Terraforming was begun on Mars. Millions lived in the asteroid belt.
 
 Then, In 2137, a mining rig discovered a strange object of unknown origin enbedded in a small asteroid. It should have been left alone. It was not. As soon as power was supplied to the object, it revealed itself as what is now known as a blinkgate. Beyond it lay a strange, impossible landscape.
 
@@ -758,7 +759,7 @@ In 2260, humanity struggles to dig itself out of the rubble of the war, the Oris
 \page
 
 # The Rules
-You'll need a group of at least two players. One of these players will be the Gamemaster (GM). He describes the world and how it reacts to the actions the other players take. The rest of the players each control a character in this world known as an explorer. When this section says 'you', its speaking to those players.
+You'll need a group of at least two players. One of these players will be the Gamemaster (GM). He describes the world and how it reacts to the actions the other players take. The rest of the players each control a character in this world known as an explorer. When this section says ?you,? it means the players controlling the Explorers.
 
 ## Attributes
 You have four Attributes.
@@ -767,7 +768,7 @@ Discipline (DS):: is physical training.
 Instinct (IN):: is innate mental ability.
 Cognition (CG):: is mental training.
 
-Everything roll you'll make in the game uses these Attributes either directly or indirectly. The higher the number is, the better your explorer is with that Attribute. 
+Every time you throw a die in this game, you?ll use these Attributes either directly or indirectly. The higher an Attribute?s number, the better it is.
 
 ## Turns
 Action happens in Turns. Simply put, a Turn is the time it takes for you to move and take one action. As long as everyone gets a Turn, and as long as each Turn encompasses roughly the same amount of time, there's no need to get more specific that that. 
@@ -833,7 +834,7 @@ Once everyone has acted, another Round begins with another Instinct Throw.
 
 ### Attack
 Make a **Fitness** Throw to attack in melee (In Reach). Make a **Discipline** Throw to make a ranged attack (Close or In Range).
-- If your Throw successful, roll your damage dice; the GM subtracts the result from the enemy's HP.
+- If your Throw is successful, roll your damage dice; the GM subtracts the result from the enemy's HP.
 - If your Throw is equal to or less than the enemy's Toughness, don't deal damage. Instead, reduce the enemy's Toughness by one.
 
 {{pageNumber,auto}}
@@ -856,7 +857,7 @@ Distant: ::Far enough away that it'll take you at *least* two moves to get there
 A Move can take you one **range band** closer to or farther from an enemy or ally. You can use your Action to Move a second time. 
 
 ##### Breaking Free
-When you try to move away from an in Reach enemy, or you move through an enemy's Reach, you must Break Free. Make a **Discipine** Throw. If you fail, choose to stop in the enemy's Reach or give them a free immediate attack. 
+When you try to move away from an enemy in Reach, or you move through an enemy's Reach, you must Break Free. Make a **Discipine** Throw. If you fail, choose to stop in the enemy's Reach or give them a free immediate attack. 
 
 \column
 
@@ -864,7 +865,10 @@ When you try to move away from an in Reach enemy, or you move through an enemy's
 When an In Reach enemy tries to move away from you, or tries to move through an area that's In Reach of you, you Intercept. A successful melee attack means the enemy must stop In Reach of you and take damage from the attack.
 
 ### Recover
-You can Act to recover HP. Spend any number of your HD, roll them, and heal equal to the result. Spent HD are usable again after a full rest.
+You can Act to recover HP. Spend any number of your HD, roll them, and heal equal to the result. Spent HD are usable again after a full night's rest.
+
+Resting also uses HD, but doesn't spend them.
+{note}
 
 ### SAVING THROWS??
 At the end of your turn, make a Saving Throw against each negative condition that affects you. Use Fitness for physical effects or Instinct for mental effects.
@@ -875,7 +879,7 @@ You can try to do pretty much anything else as well. Other actions will usually 
 }}
 
 ### Defense
-When a threat attacks you, you'll make a **Discipline** Throw to defend in melee or a **Instinct** Throw to defend against a ranged attack. If the Throw is less than your Attribute and greater than the enemy's Toughness, you avoid the attack. Otherwise, it deals damage that you subtract from your HP. 
+When a threat attacks you, you'll make a **Discipline** Throw to defend in melee or an **Instinct** Throw to defend against a ranged attack. If the Throw is less than your Attribute and greater than the enemy's Toughness, you avoid the attack. Otherwise, it deals damage that you subtract from your HP. 
 
 {{pageNumber,auto}}
 
@@ -905,14 +909,17 @@ When an NPC is reduced to 0 HP, it is incapacitated and can take no further acti
 ### Ending Combat
 Combat ends when one side is down or decides to flee. You must decide as a group with the other players when it makes sense for you to flee. If you decide to flee, narrate how you escape, but expect the GM to make things worse for you later as a result.
 
-If half the enemies in a fight (or the strongest single enemy) are reduced to 0HP, a successful Influence Throw in place of an attack -- with Toughness from the enemy that currently has the most HP -- will cause the enemy side to flee.
+If half the enemies in a fight (or the strongest single enemy) are reduced to 0 HP, a successful Influence Throw in place of an attack -- with Toughness from the enemy that currently has the most HP -- will cause the enemy side to flee.
 
 When combat ends, explorers at 0 HP regain 1d4 HP as long as you are victorious or they escape with you.
 
 ### Resting
-Once per day you can take a short rest. Roll your all your unspent HD and recover HP equal to half the result, up to your Maximum HP.
+Once per day you can take a short rest. Roll all your unspent HD and recover HP equal to half the result, rounded down, up to your Maximum HP.
 
-Rest somewhere safe for the night to roll all your HD and recover HP equal to the result, up to your Maximum HP. When you rest safely, you can also roll a 1HD and restore an equal number of points in any reduced Attributes, divided as you like, up to their original value.
+When you rest for the night, roll all of your Hit Dice, spent and unspent. Use any number of the results to restore reduced Attribute scores. Each result restores an equal number of points, divided among your reduced Attributes as you choose, up to their original scores.
+
+After restoring your Attributes, use any remaining Hit Dice results to restore HP, up to your Maximum HP. Once the rest is complete, mark all of your Hit Dice as unspent.
+
 
 {{pageNumber,auto}}
 
@@ -927,7 +934,7 @@ To create a character follow all of the steps that follow in order.
 Roll 1d8+5 four times. If no roll is at least 8, begin again. 
 
 Assign the results to your Attributes in any order: Fitness, Discipline, Instinct, Cognition. 
-Fitness (FT):: is innate physical power. It helps you in melee combat, 
+Fitness (FT):: is innate physical power.
 Discipline (DS):: is physical training.
 Instinct (IN):: is innate mental ability.
 Cognition (CG):: is mental training.
@@ -1016,7 +1023,7 @@ Determine your starting Hit Points (HP) by rolling 1HD (assigned by your archety
 Hit Points represent your Explorer's ability to withstand hits that would otherwise incapacitate them. When your explorer succeeds at a defense Throw, they avoid the attack *easily*. If they fail a defense Throw, however, they now have to exert themselves to turn that serious injury into just a minor wound. Each exertion is subtracted from their HP. Eventually, they will not have enough left and a hit will seriously injure them.
 
 ##### Scar
-You have one scar, gained in whatever event caused you to become an explorer. Describe it. Once per scene, when you're doing somethig dangerous (combat *is* dangerous) you can adjust your roll up or down an amount equal to the number of scars you have.
+You have one scar, gained in whatever event caused you to become an explorer. Describe it. Once per scene, when you're doing something dangerous (combat *is* dangerous) you can adjust your roll up or down an amount equal to the number of scars you have.
 
 {{pageNumber,auto}}
 
@@ -1025,10 +1032,10 @@ You have one scar, gained in whatever event caused you to become an explorer. De
 ### 7. Psionics
 You have the option to grant your explorer psionic powers, but it comes at a cost. If you choose to **Awaken** your explorer, follow the steps on page XX.
 
-You can Awaken as many times as you like when you create your explorer. Just be careful! If your HP or an Attribute is reduced to 0, you're dead and have to start over.
+You can Awaken as many times as you like when you create your Explorer. Just be careful! If your HP or any Attribute is reduced to 0, you're dead and have to start over.
 
 ### 8. Equip
-Find your highest Attribute on the *Equipment* tables on the next two pages and match it against your starting HP to determine your starting package.
+Find your highest Attribute on the *Equipment* tables on the next two pages, then match it against your starting HP to determine your starting package.
 
 Descriptions of starting items can be found in the item lists starting on page 10.
 {note}
@@ -1049,19 +1056,19 @@ You also begin with a Credit Die. Its starting size is determined by your Cognit
 Your character advances by gaining experience and then spending that experience to gain new levels. 
 
 ### Experience
-Experience measures a Explorer's development as they adventure and grow in power. The GM is the final judge of when Experience is due, but should use these examples as a guide:
+Experience measures an Explorer's development as they adventure and grow in power. The GM is the final judge of when Experience is due, but should use these examples as a guide:
 - You discover a major new threat.
 - You complete a mission.
 - You overcome, disable, or survive a deadly and powerful threat.
 - You succeed or fail in such a spectacular manner that everyone at the table agrees it?s worth it.
 
-### Levelling up
-Once you have acquired a number of Experience equal to 2 + your current Level you may spend your next  rest to gain a level. Afterwards, reset your Experience to 0.
+### Leveling up
+Once you have acquired Experience equal to 2 + your current Level, you may spend your next rest to gain a level. Afterwards, reset your Experience to 0.
 
-When your Hero gains a new level, do these things:
-1. Make a Throw for each Attribute. On a failure, gain +1 to that Attribute, to a maximum of 18. The Throw for one Attribute of your choice is Easy.
+When your Explorer gains a new level, do these things:
+1. Make a Combat Throw for each Attribute. On a failure, increase that Attribute by 1, to a maximum of 18. The Throw for one Attribute of your choice is Easy.
 2. Recheck skills if any of your Attributes increased.
-3. Gain an additional Hit Die, then roll all your Hit Dice. If the result is greater than your Maximum HP, the result is your new Maximum HP.
+3. Gain an additional Hit Die, then roll all your Hit Dice together. If the result is greater than your Maximum HP, the result is your new Maximum HP.
 4. Choose whether to Awaken (p. 21).
 
 {{pageNumber,auto}}
@@ -1293,18 +1300,18 @@ Orders are pretty open-ended: ?Get that bomb defused,? ?Fire at the security dro
 # Equipment
 
 ## Reputation
-Reputation is currency, and your identity is your bank. The ancient Earth cryptocurrency craze and China's Social Credit System of the early twenty-first century were the foundations for Zh?ng Securident to birth a new form of financial surety. Backed by every pre-Fall megacorp and most governments -- on Earth and in the colonies -- the Zh?ng Services Exchange was a virtual trading floor when services of all types are valued and traded. That original infrastructure bloc is shattered now, but it's surviving pieces operate much the same. The only difference is now when you travel to a place that has no reliable way to check your reputation, you have to take it with you. 
+Reputation is currency, and your identity is your bank. The ancient Earth cryptocurrency craze and China's Social Credit System of the early twenty-first century were the foundations for Zh?ng Securident to birth a new form of financial surety. Backed by every pre-Fall megacorp and most governments -- on Earth and in the colonies -- the Credit Services Exchange was a virtual trading floor when services of all types are valued and traded. That original infrastructure bloc is shattered now, but it's surviving pieces operate much the same. The only difference is now when you travel to a place that has no reliable way to check your reputation, you have to take it with you. 
 
 When you buy something from someone, you digitally sign a gaurantee to render an equal amount of service in return, based on the current CSE rates. If your seller doesn't need those services, they'll list them on the Exchange. Eventually someone will contact you who needs yoru help with something you're good at.
 
-Your explorer's reputation -- and therefore their purchasing power -- is abstracted as a Usage Die, otherwise known as the ?hang Die (?D). It will step up and down in size as you purchase and sell items.
+Your explorer's reputation -- and therefore their purchasing power -- is abstracted as a Usage Die, otherwise known as the Credit Die (CD). It will step up and down in size as you purchase and sell items.
 
 \column
 
 ##### Credit Chips
 You can convert your CD into a credit chip. This is a one-time use item with a value equal to your Credit Die at the time of conversion. After you convert your credit, you effective credit is zero, unless you sell more items or finish a job for someone -- or re-convert your chip back to normal credit. You'll need to do this when you travel long distances. 
 
-However, you can use your credit chip in one more way. While you normally can't get above a d12 on your ?D, you can save credit chips and then spend them to add their value to any Purchase Throw, discarding spent chips afterward. You may also from time to time find credit chips that work in the same way.
+However, you can use your credit chip in one more way. While you normally can't get above a d12 on your CD, you can save credit chips and then spend them to add their value to any Purchase Throw, discarding spent chips afterward. You may also from time to time find credit chips that work in the same way.
 
 ## Item Value
 The value of an item is determined by it's Rarity. Normally, the GM will set the cost, but if needed, it can be found using the *Item Cost* table below.
@@ -1586,7 +1593,7 @@ ROLL	|EFFECT
 12	|Lose 1d3 Discipline permanently.
 13	|Lose 1d3 Instinct permanently.
 14	|Roll twice and apply both effects. This result stacks.
-15+	|Your Ritual works as intended, but you permanently lose the ability to use those Words.
+15+	|Your Power works as intended, but you permanently lose the ability to use those Words.
 }}
 
 {{pageNumber,auto}}
